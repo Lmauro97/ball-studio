@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ball Studios — Independent mobile studio building games and apps for Android. Creators of Rolling Escape." />
+    <title>Ball Studios</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --bg: #030712;
+        --surface: #060d1f;
+        --card: #090f22;
+        --accent: #ff5c2b;
+        --indigo: #6366f1;
+        --blue: #38bdf8;
+        --text: #f1f5ff;
+        --muted: #64748b;
+        --dim: #2d3f5c;
+        --border: rgba(255, 255, 255, 0.06);
+        --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      html {
+        color-scheme: dark;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        height: 56px;
+        background: rgba(3, 7, 18, 0.82);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-weight: 800;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .nav-brand-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+        box-shadow: 0 0 8px rgba(255, 92, 43, 0.6);
+      }
+      .nav-links {
+        display: flex;
+      }
+      .nav-link {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0 1.1rem;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid transparent;
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .nav-link:hover {
+        color: var(--text);
+        border-bottom-color: rgba(255, 255, 255, 0.2);
+      }
+      .nav-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
+      #hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 2.5rem 6rem;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 100%);
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(72px);
+        pointer-events: none;
+      }
+      .orb-1 {
+        width: 640px;
+        height: 640px;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 65%);
+        top: -160px;
+        right: -80px;
+        animation: orbFloat 10s ease-in-out infinite;
+      }
+      .orb-2 {
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(circle, rgba(255, 92, 43, 0.14) 0%, transparent 65%);
+        bottom: -60px;
+        left: -60px;
+        animation: orbFloat 13s ease-in-out infinite reverse;
+      }
+      .orb-3 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 65%);
+        top: 40%;
+        left: 40%;
+        animation: orbFloat 15s ease-in-out infinite 3s;
+      }
+      @keyframes orbFloat {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-24px) scale(1.04); }
+      }
+      #starCanvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1100px;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+      .hero-left {
+        flex: 1;
+        min-width: 280px;
+      }
+      .hero-wordmark {
+        font-size: clamp(3.4rem, 9.5vw, 9rem);
+        font-weight: 900;
+        line-height: 0.88;
+        letter-spacing: -0.055em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 2rem;
+      }
+      .hero-wordmark em {
+        font-style: normal;
+        background: linear-gradient(135deg, #ff5c2b 0%, #ff9a5c 60%, #ffb347 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+      }
+      .hero-descriptor {
+        font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+        color: var(--muted);
+        letter-spacing: 0.01em;
+        max-width: 420px;
+        line-height: 1.8;
+      }
+      .focus-panel {
+        width: clamp(240px, 30%, 300px);
+        background: rgba(4, 8, 24, 0.88);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 16px;
+        padding: 1.5rem 1.5rem 0.75rem;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 0 48px rgba(99, 102, 241, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      }
+      .focus-label {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 1.1rem;
+      }
+      .focus-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .focus-item {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.72rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        opacity: 0;
+        animation: focusIn 0.4s ease forwards;
+      }
+      .focus-item:last-child { border-bottom: none; }
+      .focus-item:nth-child(1) { animation-delay: 0.2s; }
+      .focus-item:nth-child(2) { animation-delay: 0.33s; }
+      .focus-item:nth-child(3) { animation-delay: 0.46s; }
+      .focus-item:nth-child(4) { animation-delay: 0.59s; }
+      .focus-item:nth-child(5) { animation-delay: 0.72s; }
+      .focus-bar {
+        width: 3px;
+        height: 28px;
+        border-radius: 3px;
+        flex-shrink: 0;
+      }
+      .focus-bar.game {
+        background: linear-gradient(180deg, #ff5c2b, #ff9a5c);
+        box-shadow: 0 0 8px rgba(255, 92, 43, 0.4);
+      }
+      .focus-bar.app {
+        background: linear-gradient(180deg, #38bdf8, #6366f1);
+        box-shadow: 0 0 8px rgba(99, 102, 241, 0.35);
+      }
+      .focus-name {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--text);
+        display: block;
+        line-height: 1.1;
+      }
+      .focus-sub {
+        font-size: 0.66rem;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+        margin-top: 0.18rem;
+        display: block;
+      }
+      @keyframes focusIn {
+        from { opacity: 0; transform: translateX(12px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .orb { animation: none; }
+        .focus-item { animation: none; opacity: 1; }
+      }
+      @media (max-width: 820px) {
+        .hero-inner { gap: 2.5rem; }
+        .focus-panel { width: 100%; }
+      }
+      #catalog {
+        padding: 7rem 2.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .catalog-category { margin-bottom: 5rem; }
+      .category-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .category-label {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .category-count {
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dim);
+        margin-left: auto;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+      }
+      .product-card {
+        background: var(--card);
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+      .product-card:hover {
+        border-color: rgba(255, 92, 43, 0.25);
+        box-shadow: 0 0 0 1px rgba(255, 92, 43, 0.06), 0 12px 48px rgba(255, 92, 43, 0.07);
+        transform: translateY(-2px);
+      }
+      .card-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+      }
+      .badge {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        border-radius: 5px;
+        padding: 0.18rem 0.52rem;
+      }
+      .badge-type { background: rgba(255, 92, 43, 0.1); color: var(--accent); }
+      .badge-live { background: rgba(56, 189, 248, 0.1); color: var(--blue); }
+      .badge-soon { background: rgba(100, 116, 139, 0.12); color: var(--muted); }
+      .badge-platform { background: rgba(99, 102, 241, 0.1); color: #a5b4fc; }
+      .card-title {
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text);
+      }
+      .card-desc {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.78;
+      }
+      .card-stats {
+        display: flex;
+        gap: 1.75rem;
+        flex-wrap: wrap;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border);
+      }
+      .stat { display: flex; flex-direction: column; gap: 0.08rem; }
+      .stat-val {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text);
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.025em;
+      }
+      .stat-lbl {
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .card-tags { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+      .tag {
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.18rem 0.55rem;
+        color: var(--muted);
+      }
+      .card-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        padding: 0.62rem 1.35rem;
+        border-radius: 9px;
+        width: fit-content;
+        margin-top: auto;
+        transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+        box-shadow: 0 4px 20px rgba(255, 92, 43, 0.3);
+      }
+      .card-cta:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 28px rgba(255, 92, 43, 0.4);
+      }
+      .card-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .card-soon {
+        background: transparent;
+        border: 1px dashed rgba(255, 255, 255, 0.07);
+        border-radius: 14px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.6rem;
+        min-height: 200px;
+      }
+      .soon-title { font-size: 0.88rem; font-weight: 700; color: var(--dim); }
+      .soon-sub { font-size: 0.78rem; color: var(--dim); line-height: 1.68; }
+      @media (max-width: 660px) {
+        .product-grid { grid-template-columns: 1fr; }
+      }
+      #about {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 5rem 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      #about::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .about-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 4rem;
+        align-items: start;
+        position: relative;
+      }
+      .about-label {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-top: 0.2rem;
+      }
+      .about-body { font-size: 0.98rem; color: var(--muted); line-height: 1.88; }
+      .about-body strong { color: var(--text); font-weight: 600; }
+      .about-contact { margin-top: 1.25rem; font-size: 0.875rem; }
+      .about-contact a { color: var(--blue); text-decoration: none; }
+      .about-contact a:hover { text-decoration: underline; }
+      @media (max-width: 700px) {
+        .about-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      }
+      #privacy {
+        padding: 5rem 2.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .privacy-index { margin-bottom: 4rem; }
+      .privacy-index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .privacy-index-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transition: border-color 0.18s;
+      }
+      .privacy-index-item:hover { border-color: rgba(255, 92, 43, 0.2); }
+      .pii-app { font-size: 0.875rem; font-weight: 700; color: var(--text); }
+      .pii-type {
+        font-size: 0.67rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .pii-link { font-size: 0.75rem; color: var(--blue); text-decoration: none; margin-top: auto; }
+      .pii-link:hover { text-decoration: underline; }
+      .policy-block { border-top: 1px solid var(--border); padding-top: 4rem; }
+      .policy-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+      .policy-meta h2 { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; }
+      .policy-meta .badge { align-self: center; }
+      .policy-updated { font-size: 0.72rem; color: var(--muted); margin-left: auto; }
+      .policy-section {
+        margin-bottom: 2.25rem;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 2.5rem;
+      }
+      .policy-section h3 {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding-top: 0.15rem;
+      }
+      .policy-section p,
+      .policy-section li { font-size: 0.875rem; color: var(--muted); line-height: 1.88; }
+      .policy-section ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+      .policy-section li { margin-bottom: 0.25rem; }
+      .policy-section a { color: var(--blue); text-decoration: none; }
+      .policy-section a:hover { text-decoration: underline; }
+      @media (max-width: 640px) {
+        .policy-section { grid-template-columns: 1fr; gap: 0.4rem; }
+      }
+      footer {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        padding: 1.75rem 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+      footer a:hover { color: var(--text); }
+      .footer-links { display: flex; gap: 1.75rem; }
+      @media (max-width: 540px) {
+        footer { justify-content: center; text-align: center; }
+        .footer-links { justify-content: center; flex-wrap: wrap; gap: 1.25rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .card-cta, .product-card { transition: none; }
+      }
+      @media (max-width: 640px) {
+        nav { padding: 0 1.1rem; }
+        .nav-brand { font-size: 0.82rem; letter-spacing: 0.08em; }
+        .nav-link { padding: 0 0.6rem; font-size: 0.68rem; letter-spacing: 0.04em; }
+        #hero { padding: 0 1.25rem 3.5rem; }
+        .hero-inner { gap: 1.75rem; }
+        .hero-wordmark { margin-bottom: 1.5rem; font-size: clamp(2.8rem, 14vw, 9rem); }
+        .hero-descriptor { font-size: 0.87rem; }
+        .orb-1 { width: 340px; height: 340px; top: -80px; right: -50px; }
+        .orb-2 { width: 240px; height: 240px; bottom: -20px; left: -30px; }
+        .orb-3 { width: 160px; height: 160px; }
+        #catalog { padding: 4.5rem 1.25rem; }
+        #about { padding: 3rem 1.25rem; }
+        #privacy { padding: 3.5rem 1.25rem; }
+        footer { padding: 1.5rem 1.25rem; }
+      }
+      @media (max-width: 380px) {
+        nav { padding: 0 0.85rem; }
+        .nav-links { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="nav-brand"><span class="nav-brand-dot"></span>Ball Studios</a>
+      <div class="nav-links">
+        <a href="#catalog" class="nav-link">Products</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#privacy" class="nav-link">Privacy</a>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <canvas id="starCanvas"></canvas>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-wordmark">Ball<em>Studios</em></h1>
+          <p class="hero-descriptor">
+            Independent mobile studio. We build games and apps that are tight,
+            honest, and worth your time.
+          </p>
+        </div>
+        <div class="focus-panel">
+          <span class="focus-label">What we build</span>
+          <div class="focus-list">
+            <div class="focus-item">
+              <span class="focus-bar game"></span>
+              <div>
+                <span class="focus-name">Mobile Games</span>
+                <span class="focus-sub">React Native</span>
+              </div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-bar game"></span>
+              <div>
+                <span class="focus-name">Unity Games</span>
+                <span class="focus-sub">Cross-platform</span>
+              </div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-bar app"></span>
+              <div>
+                <span class="focus-name">Productivity Apps</span>
+                <span class="focus-sub">Android</span>
+              </div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-bar app"></span>
+              <div>
+                <span class="focus-name">AI Applications</span>
+                <span class="focus-sub">Mobile-first</span>
+              </div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-bar app"></span>
+              <div>
+                <span class="focus-name">Study &amp; Learning</span>
+                <span class="focus-sub">Education tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog">
+      <div class="catalog-category">
+        <div class="category-header">
+          <span class="category-label">Games</span>
+          <span class="category-count">1 published · 1 in development</span>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="card-meta">
+              <span class="badge badge-type">Game</span>
+              <span class="badge badge-live">● Available</span>
+              <span class="badge badge-platform">Android</span>
+            </div>
+            <div>
+              <div class="card-title">Rolling Escape</div>
+              <p class="card-desc" style="margin-top:0.5rem">
+                A precision platformer where every jump counts. Roll and bounce
+                through 20 handcrafted levels across four distinct worlds — Space,
+                Cavern, Glacier, and Lava.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Platformer</span>
+              <span class="tag">Physics</span>
+              <span class="tag">Checkpoints</span>
+              <span class="tag">Shop</span>
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-val">20</span>
+                <span class="stat-lbl">Levels</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">4</span>
+                <span class="stat-lbl">Worlds</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">6+</span>
+                <span class="stat-lbl">Skins</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">3</span>
+                <span class="stat-lbl">Languages</span>
+              </div>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ballstudio.escapefromball"
+              class="card-cta"
+              target="_blank"
+              rel="noopener"
+            >Download on Google Play ↗</a>
+          </div>
+          <div class="card-soon">
+            <span class="badge badge-soon">In development</span>
+            <span class="soon-title">Next game</span>
+            <span class="soon-sub">Currently in early development. Details to be announced.</span>
+          </div>
+        </div>
+      </div>
+      <div class="catalog-category">
+        <div class="category-header">
+          <span class="category-label">Apps</span>
+          <span class="category-count">Coming soon</span>
+        </div>
+        <div class="product-grid" style="max-width:400px">
+          <div class="card-soon" style="min-height:160px">
+            <span class="badge badge-soon">In planning</span>
+            <span class="soon-title">First app</span>
+            <span class="soon-sub">Our first non-game application is in the planning stage.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-inner">
+        <span class="about-label">About</span>
+        <div class="about-body">
+          <p>
+            <strong>Ball Studios</strong> is a small independent studio building
+            across mobile: React Native and Unity games, productivity tools,
+            AI-powered apps, and study experiences. We ship things that are tight,
+            honest, and worth your time.
+          </p>
+          <p class="about-contact" style="margin-top:1rem">
+            Want to get in touch? Write to us at
+            <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="privacy-index">
+        <div class="category-header">
+          <span class="category-label">Privacy Policies</span>
+        </div>
+        <div class="privacy-index-grid">
+          <div class="privacy-index-item">
+            <span class="pii-app">Rolling Escape</span>
+            <span class="pii-type">Game · Android</span>
+            <a href="#privacy-rolling-escape" class="pii-link">Read policy ↓</a>
+          </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--muted);margin-top:1.25rem">
+          Additional policies will be published here as new products are released.
+        </p>
+      </div>
+      <div class="policy-block" id="privacy-rolling-escape">
+        <div class="policy-meta">
+          <h2>Rolling Escape</h2>
+          <span class="badge badge-type">Privacy Policy</span>
+          <span class="policy-updated">Last updated: June 24, 2026</span>
+        </div>
+        <div class="policy-section">
+          <h3>Overview</h3>
+          <p>
+            Ball Studios ("we", "our") operates the mobile application
+            <strong>Rolling Escape</strong>. This document describes how data is
+            collected and used when you play the game.
+          </p>
+        </div>
+        <div class="policy-section">
+          <h3>Data we collect</h3>
+          <p>
+            Rolling Escape does not collect personal information through its own
+            systems. All game progress — score, coins, owned skins, checkpoint level
+            — is stored locally on your device and is never transmitted to our servers.
+          </p>
+        </div>
+        <div class="policy-section">
+          <h3>Third-party advertising</h3>
+          <div>
+            <p>
+              The App uses <strong>Google AdMob</strong> to display advertisements.
+              AdMob may collect data to serve personalized ads, including:
+            </p>
+            <ul>
+              <li>Device identifiers (Advertising ID)</li>
+              <li>IP address and approximate location</li>
+              <li>Interaction data with displayed ads</li>
+              <li>App usage information</li>
+            </ul>
+            <p style="margin-top:0.75rem">
+              You can opt out of personalized advertising in your device settings
+              under <em>Privacy &rarr; Ads</em>. Google's data practices are
+              governed by
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+                Google's Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+        <div class="policy-section">
+          <h3>Children's privacy</h3>
+          <p>
+            The App is not directed at children under 13. We do not knowingly
+            collect personal data from children. Contact us if you believe a child
+            has provided personal information and we will delete it promptly.
+          </p>
+        </div>
+        <div class="policy-section">
+          <h3>Data deletion</h3>
+          <p>
+            Local game data can be removed at any time by uninstalling the App or
+            using the <em>Reset Progress</em> option in the game settings.
+          </p>
+        </div>
+        <div class="policy-section">
+          <h3>Contact</h3>
+          <p>
+            Questions about this policy:
+            <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Ball Studios</span>
+      <div class="footer-links">
+        <a href="#catalog">Products</a>
+        <a href="#privacy">Privacy</a>
+        <a href="mailto:lsalazarbedon@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const cv = document.getElementById('starCanvas'),
+          cx = cv.getContext('2d');
+        let W, H, stars = [];
+        function resize() {
+          W = cv.width = cv.offsetWidth;
+          H = cv.height = cv.offsetHeight;
+        }
+        function initStars() {
+          stars = Array.from({ length: 70 }, () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 0.9 + 0.15,
+            a: Math.random() * 0.32 + 0.08,
+            sp: Math.random() * 0.05 + 0.01,
+          }));
+        }
+        function draw() {
+          cx.clearRect(0, 0, W, H);
+          for (const s of stars) {
+            s.x -= s.sp;
+            if (s.x < 0) { s.x = W; s.y = Math.random() * H; }
+            cx.beginPath();
+            cx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            cx.fillStyle = `rgba(220,230,255,${s.a})`;
+            cx.fill();
+          }
+        }
+        const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+        window.addEventListener('resize', () => {
+          resize();
+          stars.forEach((s) => { s.x = Math.random() * W; s.y = Math.random() * H; });
+        });
+        resize();
+        initStars();
+        if (reduced) { draw(); } else {
+          (function loop() { draw(); requestAnimationFrame(loop); })();
+        }
+      })();
+    </script>
+  </body>
+</html>
