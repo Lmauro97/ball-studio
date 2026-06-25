@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ball Studios — Independent mobile studio building games and apps for Android. Creators of Rolling Escape." />
+    <meta name="description" content="Ball Studios — Independent mobile studio building games and apps for Android. Creators of Rolling Escape, Arcane Spheres, and Hábitos." />
     <title>Ball Studios</title>
     <style>
       *,
@@ -470,7 +470,8 @@
       @media (max-width: 700px) {
         .about-inner { grid-template-columns: 1fr; gap: 1.5rem; }
       }
-      #privacy {
+      #privacy,
+      #terms {
         padding: 5rem 2.5rem;
         max-width: 1100px;
         margin: 0 auto;
@@ -572,7 +573,7 @@
         .orb-3 { width: 160px; height: 160px; }
         #catalog { padding: 4.5rem 1.25rem; }
         #about { padding: 3rem 1.25rem; }
-        #privacy { padding: 3.5rem 1.25rem; }
+        #privacy, #terms { padding: 3.5rem 1.25rem; }
         footer { padding: 1.5rem 1.25rem; }
       }
       @media (max-width: 380px) {
@@ -588,6 +589,7 @@
         <a href="#catalog" class="nav-link">Products</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#privacy" class="nav-link">Privacy</a>
+        <a href="#terms" class="nav-link">Terms</a>
       </div>
     </nav>
 
@@ -654,7 +656,7 @@
       <div class="catalog-category">
         <div class="category-header">
           <span class="category-label">Games</span>
-          <span class="category-count">1 published · 1 in development</span>
+          <span class="category-count">2 published</span>
         </div>
         <div class="product-grid">
           <div class="product-card">
@@ -702,23 +704,107 @@
               rel="noopener"
             >Download on Google Play ↗</a>
           </div>
-          <div class="card-soon">
-            <span class="badge badge-soon">In development</span>
-            <span class="soon-title">Next game</span>
-            <span class="soon-sub">Currently in early development. Details to be announced.</span>
+          <div class="product-card">
+            <div class="card-meta">
+              <span class="badge badge-type">Game</span>
+              <span class="badge badge-live">● Available</span>
+              <span class="badge badge-platform">Android</span>
+            </div>
+            <div>
+              <div class="card-title">Arcane Spheres</div>
+              <p class="card-desc" style="margin-top:0.5rem">
+                A fast-paced 3D platformer in landscape. Race through
+                procedurally-varied levels at escalating speed, collect power-ups,
+                survive moving and bouncing platforms, and push your limit in
+                Endless mode.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Platformer</span>
+              <span class="tag">Speed</span>
+              <span class="tag">Power-ups</span>
+              <span class="tag">Endless</span>
+              <span class="tag">Upgrades</span>
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-val">49</span>
+                <span class="stat-lbl">Levels</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">8</span>
+                <span class="stat-lbl">Spheres</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">2</span>
+                <span class="stat-lbl">Modes</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">3</span>
+                <span class="stat-lbl">Languages</span>
+              </div>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ballstudio.ArcaneSpheres"
+              class="card-cta"
+              target="_blank"
+              rel="noopener"
+            >Download on Google Play ↗</a>
           </div>
         </div>
       </div>
       <div class="catalog-category">
         <div class="category-header">
           <span class="category-label">Apps</span>
-          <span class="category-count">Coming soon</span>
+          <span class="category-count">1 published</span>
         </div>
-        <div class="product-grid" style="max-width:400px">
-          <div class="card-soon" style="min-height:160px">
-            <span class="badge badge-soon">In planning</span>
-            <span class="soon-title">First app</span>
-            <span class="soon-sub">Our first non-game application is in the planning stage.</span>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="card-meta">
+              <span class="badge badge-type">Productivity</span>
+              <span class="badge badge-live">● Available</span>
+              <span class="badge badge-platform">Android</span>
+            </div>
+            <div>
+              <div class="card-title">Hábitos</div>
+              <p class="card-desc" style="margin-top:0.5rem">
+                A habit tracker and personal coach in one. Build routines with
+                daily streaks and gamified leagues, log your mood and voice notes
+                in a personal diary, and get personalized advice from an AI coach
+                powered by DeepSeek.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Habits</span>
+              <span class="tag">Productivity</span>
+              <span class="tag">AI Coach</span>
+              <span class="tag">Diary</span>
+              <span class="tag">Gamification</span>
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-val">5</span>
+                <span class="stat-lbl">Screens</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">6</span>
+                <span class="stat-lbl">Leagues</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">3</span>
+                <span class="stat-lbl">Languages</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">AI</span>
+                <span class="stat-lbl">Coach</span>
+              </div>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ballstudio.habitos.app"
+              class="card-cta"
+              target="_blank"
+              rel="noopener"
+            >Download on Google Play ↗</a>
           </div>
         </div>
       </div>
@@ -753,6 +839,31 @@
             <span class="pii-type">Game · Android</span>
             <a href="#privacy-rolling-escape" class="pii-link">Read policy ↓</a>
           </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">Rolling Escape</span>
+            <span class="pii-type">Terms &amp; Conditions</span>
+            <a href="#terms-rolling-escape" class="pii-link">Read terms ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">Arcane Spheres</span>
+            <span class="pii-type">Game · Android</span>
+            <a href="#privacy-arcane-spheres" class="pii-link">Read policy ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">Arcane Spheres</span>
+            <span class="pii-type">Terms &amp; Conditions</span>
+            <a href="#terms-arcane-spheres" class="pii-link">Read terms ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">Hábitos</span>
+            <span class="pii-type">App · Android</span>
+            <a href="#privacy-habitos" class="pii-link">Read policy ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">Hábitos</span>
+            <span class="pii-type">Terms &amp; Conditions</span>
+            <a href="#terms-habitos" class="pii-link">Read terms ↓</a>
+          </div>
         </div>
         <p style="font-size:0.75rem;color:var(--muted);margin-top:1.25rem">
           Additional policies will be published here as new products are released.
@@ -781,7 +892,7 @@
           </p>
         </div>
         <div class="policy-section">
-          <h3>Third-party advertising</h3>
+          <h3>Advertising</h3>
           <div>
             <p>
               The App uses <strong>Google AdMob</strong> to display advertisements.
@@ -794,11 +905,11 @@
               <li>App usage information</li>
             </ul>
             <p style="margin-top:0.75rem">
-              You can opt out of personalized advertising in your device settings
-              under <em>Privacy &rarr; Ads</em>. Google's data practices are
-              governed by
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
-                Google's Privacy Policy</a>.
+              Users in the <strong>EEA and UK</strong> are shown a consent dialog powered by
+              <strong>Google's User Messaging Platform (UMP)</strong> before personalized ads
+              are served. You may withdraw consent at any time through your device settings
+              under <em>Privacy → Ads</em>. Google's data practices are governed by
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
             </p>
           </div>
         </div>
@@ -818,9 +929,695 @@
           </p>
         </div>
         <div class="policy-section">
+          <h3>Lawful basis (EEA &amp; UK)</h3>
+          <p>
+            Ball Studios does not process personal data through its own systems for this App.
+            Advertising data processed by Google AdMob is based on your <strong>consent</strong>
+            (EEA/UK users, via Google's UMP dialog) or <strong>legitimate interest</strong>
+            (non-personalized ads). Local game data stored on your device is not subject to GDPR.
+          </p>
+        </div>
+        <div class="policy-section">
+          <h3>Your rights</h3>
+          <div>
+            <p>Depending on your location, you may have the following rights:</p>
+            <ul>
+              <li><strong>Access</strong> — request a copy of personal data held about you</li>
+              <li><strong>Erasure</strong> — request deletion of your data ("right to be forgotten")</li>
+              <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+              <li><strong>Opt-out of data sharing</strong> (California/CCPA) — AdMob data sharing may qualify as a "sale" under CCPA; opt out via your device ad settings</li>
+            </ul>
+            <p style="margin-top:0.75rem">
+              All game data is stored locally. Use <em>Reset Progress</em> or uninstall the App
+              to delete it. For AdMob-related rights, write to
+              <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a> and we will assist within 30 days.
+            </p>
+          </div>
+        </div>
+        <div class="policy-section">
+          <h3>Data retention</h3>
+          <p>
+            Ball Studios retains no personal data on its servers. Game data persists on your device
+            until you uninstall the App or use <em>Reset Progress</em>. AdMob data retention is
+            governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+          </p>
+        </div>
+        <div class="policy-section">
           <h3>Contact</h3>
           <p>
             Questions about this policy:
+            <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- ── Arcane Spheres Privacy Policy ── -->
+        <div class="policy-block" id="privacy-arcane-spheres" style="margin-top:3rem">
+          <div class="policy-meta">
+            <h2>Arcane Spheres</h2>
+            <span class="badge badge-type">Privacy Policy</span>
+            <span class="policy-updated">Last updated: June 25, 2026</span>
+          </div>
+          <div class="policy-section">
+            <h3>Overview</h3>
+            <p>
+              Ball Studios ("we", "our") operates the mobile application
+              <strong>Arcane Spheres</strong> (package ID:
+              <code style="font-size:0.8rem;background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;color:var(--blue)">com.ballstudio.ArcaneSpheres</code>).
+              This document describes how data is collected and used when you play the game.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Data we collect</h3>
+            <p>
+              Arcane Spheres does not collect personal information through its own systems.
+              All game progress — current level, coins, purchased upgrades, equipped sphere skin,
+              and settings — is stored locally on your device and is never transmitted to our servers.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>In-app purchases</h3>
+            <p>
+              The App offers optional in-app purchases (coins, upgrades) processed entirely
+              by <strong>Google Play</strong>. We do not receive or store any payment information.
+              All transactions are governed by
+              <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play's Terms of Service</a>.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Advertising</h3>
+            <div>
+              <p>
+                The App uses <strong>Google AdMob</strong> to display advertisements, including
+                banner ads (main menu), interstitial ads (between levels), and optional rewarded
+                ads. AdMob may collect data to serve personalized ads, including:
+              </p>
+              <ul>
+                <li>Device identifiers (Advertising ID)</li>
+                <li>IP address and approximate location</li>
+                <li>Interaction data with displayed ads</li>
+                <li>App usage information</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                Users in the <strong>EEA and UK</strong> are shown a consent dialog powered by
+                <strong>Google's User Messaging Platform (UMP)</strong> before personalized ads
+                are served. You may withdraw consent at any time through your device settings
+                under <em>Privacy → Ads</em>. Google's data practices are governed by
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Children's privacy</h3>
+            <p>
+              The App is not directed at children under 13. We do not knowingly collect personal
+              data from children. If you believe a child has provided personal information,
+              contact us and we will delete it promptly.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Lawful basis (EEA &amp; UK)</h3>
+            <p>
+              Ball Studios does not process personal data through its own systems for this App.
+              Advertising data processed by Google AdMob relies on your <strong>consent</strong>
+              (EEA/UK users, via Google's UMP) or <strong>legitimate interest</strong>
+              (non-personalized ads). In-app purchases are processed by Google Play under a
+              <strong>contractual basis</strong>. Local game data on your device is not subject to GDPR.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Your rights</h3>
+            <div>
+              <p>Depending on your location, you may have the following rights:</p>
+              <ul>
+                <li><strong>Access</strong> — request a copy of personal data held about you</li>
+                <li><strong>Erasure</strong> — request deletion of your data</li>
+                <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+                <li><strong>Opt-out of data sharing</strong> (California) — opt out of ad data sharing via device settings</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                All game data is local. Use <em>Reset Progress</em> or uninstall the App to delete it.
+                For AdMob-related requests write to <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a> — we will respond within 30 days.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Data retention</h3>
+            <p>
+              Ball Studios retains no personal data on its servers. Game data persists on your device
+              until you uninstall the App or reset progress. Google Play retains purchase records per
+              their own policies. AdMob data retention is governed by
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Contact</h3>
+            <p>
+              Questions about this policy:
+              <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ── Hábitos Privacy Policy ── -->
+        <div class="policy-block" id="privacy-habitos" style="margin-top:3rem">
+          <div class="policy-meta">
+            <h2>Habits <span style="font-weight:400;color:var(--muted);font-size:0.9rem">(Hábitos)</span></h2>
+            <span class="badge badge-type">Privacy Policy</span>
+            <span class="policy-updated">Last updated: June 25, 2026</span>
+          </div>
+          <div class="policy-section">
+            <h3>Overview</h3>
+            <p>
+              Ball Studios ("we", "our") operates the mobile application
+              <strong>Habits</strong> (known as <em>Hábitos</em> in some markets, package ID:
+              <code style="font-size:0.8rem;background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;color:var(--blue)">com.ballstudio.habitos.app</code>).
+              This document describes how data is collected and used when you use the App.
+              Habits is a habit tracker and personal productivity tool that also offers an
+              AI coaching feature and an optional cloud backup via Firebase.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Data we collect</h3>
+            <div>
+              <p>
+                Hábitos is built local-first: your habits, goals, diary entries, mood logs,
+                audio voice memos, and points are stored on your device and never transmitted
+                to our servers unless you choose to sign in. When you use the optional
+                Google sign-in, the following additional data may be collected:
+              </p>
+              <ul>
+                <li>Google account display name and email address (used only for account identification)</li>
+                <li>A Firebase user ID linked to your account</li>
+                <li>Habit and goal data synced to Firestore for backup and cross-device access</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                You can use the App fully without creating an account. Anonymous usage does
+                not transmit any personal data to our servers.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>AI coach</h3>
+            <div>
+              <p>
+                The App includes an <strong>AI coaching feature</strong> powered by DeepSeek. In compliance
+                with the <strong>EU AI Act</strong> (in force August 2026), we inform you that this feature
+                uses an artificial intelligence system to generate personalized habit advice.
+                <strong>You are always interacting with an AI, not a human coach.</strong>
+              </p>
+              <p style="margin-top:0.75rem">
+                When you use the AI coach, a summary of your habit and goal activity is sent to a secure
+                backend proxy (hosted on Render) which forwards the request to
+                <strong>DeepSeek</strong> (operated by DeepSeek AI, People's Republic of China).
+                This summary contains aggregated habit statistics only — it does not include your name,
+                email, diary entries, voice memos, or any directly identifying information.
+                Requests are not stored by Ball Studios beyond the session duration.
+              </p>
+              <p style="margin-top:0.75rem">
+                <strong>International transfer notice:</strong> DeepSeek is based in China, a country
+                without an EU adequacy decision. By using the AI coach, you acknowledge that your
+                anonymized habit statistics will be transferred to and processed in China under
+                DeepSeek's terms. If you do not wish this transfer, do not use the AI coach feature —
+                all core habit-tracking functionality remains available without it.
+              </p>
+              <p style="margin-top:0.75rem">
+                DeepSeek's data practices are governed by
+                <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">DeepSeek's Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Advertising</h3>
+            <div>
+              <p>
+                The App uses <strong>Google AdMob</strong> to display rewarded ads. Watching
+                a rewarded ad is optional and unlocks additional AI coach interactions.
+                AdMob may collect data to serve personalized ads, including:
+              </p>
+              <ul>
+                <li>Device identifiers (Advertising ID)</li>
+                <li>IP address and approximate location</li>
+                <li>Interaction data with displayed ads</li>
+                <li>App usage information</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                You can opt out of personalized advertising in your device settings under
+                <em>Privacy &rarr; Ads</em>. Google's data practices are governed by
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>In-app purchases</h3>
+            <p>
+              The App offers an optional premium subscription processed by
+              <strong>Google Play</strong>. We do not receive or store payment card details.
+              All transactions are governed by
+              <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play's Terms of Service</a>.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Push notifications</h3>
+            <p>
+              With your permission, the App sends local push notifications as habit reminders
+              and weekly review prompts. These notifications are scheduled on your device and
+              do not involve transmitting personal data to our servers. You can disable
+              notifications at any time in your device settings.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Children's privacy</h3>
+            <p>
+              The App is not directed at children under 13. We do not knowingly collect
+              personal data from children. If you believe a child has provided personal
+              information, contact us and we will delete it promptly.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Data deletion</h3>
+            <p>
+              Local data can be removed at any time by uninstalling the App. If you signed
+              in with a Google account, you can request deletion of your Firebase data by
+              contacting us at the address below and we will process the request within
+              30 days. You can also export and delete your data using the backup and restore
+              feature inside the App's profile screen.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Lawful basis (EEA &amp; UK)</h3>
+            <div>
+              <p>Where we process personal data, the lawful basis under GDPR is:</p>
+              <ul>
+                <li><strong>Contract</strong> — account data (name, email, Firebase ID) required to provide cloud sync and the signed-in service</li>
+                <li><strong>Consent</strong> — personalized advertising via AdMob (EEA/UK); AI coach data transfer to DeepSeek</li>
+                <li><strong>Legitimate interest</strong> — non-personalized ads; anonymous usage analytics to improve the App</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                Anonymous (non-signed-in) usage involves no personal data processing by Ball Studios.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Your rights</h3>
+            <div>
+              <p>If you are in the EEA, UK, or California, you have the following rights:</p>
+              <ul>
+                <li><strong>Access</strong> — request a copy of personal data we hold about you</li>
+                <li><strong>Rectification</strong> — request correction of inaccurate data</li>
+                <li><strong>Erasure</strong> — request deletion of your account and associated data</li>
+                <li><strong>Portability</strong> — receive your habit and goal data in a structured format (available via the App's export feature)</li>
+                <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+                <li><strong>Withdraw consent</strong> — withdraw AI coach or ad consent at any time without affecting other features</li>
+                <li><strong>Opt-out of data sharing</strong> (California) — opt out of ad data sharing via device settings</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                To exercise these rights, contact us at
+                <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+                We will respond within 30 days.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Contact</h3>
+            <p>
+              Questions about this policy:
+              <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="terms" style="border-top:1px solid var(--border)">
+      <div class="category-header" style="margin-bottom:3rem">
+        <span class="category-label">Terms &amp; Conditions</span>
+      </div>
+
+      <div class="policy-block" id="terms-rolling-escape">
+        <div class="policy-meta">
+          <h2>Rolling Escape</h2>
+          <span class="badge badge-type">Terms &amp; Conditions</span>
+          <span class="policy-updated">Last updated: June 25, 2026</span>
+        </div>
+
+        <div class="policy-section">
+          <h3>Agreement</h3>
+          <p>By downloading, installing, or playing <strong>Rolling Escape</strong> you agree to be bound by these Terms and Conditions. If you do not agree, do not use the App.</p>
+        </div>
+        <div class="policy-section">
+          <h3>License</h3>
+          <p>Ball Studios grants you a limited, personal, non-commercial, non-transferable, revocable license to use the App on Android devices you own or control, solely for your personal entertainment. You may not sublicense, sell, resell, or commercially exploit the App or its content in any way.</p>
+        </div>
+        <div class="policy-section">
+          <h3>In-app purchases</h3>
+          <div>
+            <p>The App offers optional cosmetic items (skins, coins) available for purchase through Google Play. By making a purchase you agree that:</p>
+            <ul>
+              <li>All transactions are processed by Google Play and subject to its Terms of Service.</li>
+              <li>Purchases are final and non-refundable except where required by applicable law.</li>
+              <li>Ball Studios reserves the right to modify pricing or discontinue items at any time without prior notice.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="policy-section">
+          <h3>Virtual items</h3>
+          <p>Coins and skins in the App are virtual items with no monetary value outside the App. They cannot be transferred to other users, exchanged for real money, or redeemed for goods or services.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Advertising</h3>
+          <p>The App displays advertisements via Google AdMob. Users in the EEA and UK will be asked for consent before personalized ads are shown. See our <a href="#privacy-rolling-escape">Privacy Policy</a> for details.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Intellectual property</h3>
+          <p>All content within the App — including graphics, code, sound, level design, and the Ball Studios name and logo — is the exclusive property of Ball Studios. You may not copy, modify, distribute, decompile, or create derivative works without express written permission.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Disclaimers</h3>
+          <p>The App is provided <em>"as is"</em> without warranties of any kind. Ball Studios does not warrant that the App will be error-free or uninterrupted. Your use of the App is at your sole risk.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Limitation of liability</h3>
+          <p>To the fullest extent permitted by law, Ball Studios shall not be liable for any indirect, incidental, or consequential damages arising from your use of the App. Our total liability shall not exceed the amount you paid in in-app purchases in the three months preceding the claim.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Changes to terms</h3>
+          <p>We may update these Terms at any time. Changes will be posted on this page with a revised date. Continued use of the App after changes are posted constitutes your acceptance.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Governing law</h3>
+          <p>These Terms are governed by the laws of Colombia. Any disputes shall be subject to the exclusive jurisdiction of the courts of Colombia.</p>
+        </div>
+        <div class="policy-section">
+          <h3>Contact</h3>
+          <p>Questions about these Terms: <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="policy-block" id="terms-arcane-spheres" style="margin-top:3rem">
+        <div class="policy-meta">
+          <h2>Arcane Spheres</h2>
+          <span class="badge badge-type">Terms &amp; Conditions</span>
+          <span class="policy-updated">Last updated: June 25, 2026</span>
+        </div>
+
+        <div class="policy-section">
+          <h3>Agreement</h3>
+          <p>
+            By downloading, installing, or playing <strong>Arcane Spheres</strong> you agree
+            to be bound by these Terms and Conditions. If you do not agree, do not use the App.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>License</h3>
+          <p>
+            Ball Studios grants you a limited, personal, non-commercial, non-transferable,
+            revocable license to use the App on Android devices you own or control, solely
+            for your personal entertainment. You may not sublicense, sell, resell, or
+            commercially exploit the App or its content in any way.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>In-app purchases</h3>
+          <div>
+            <p>
+              The App offers optional virtual items (coins, upgrades) available for purchase
+              through Google Play. By making a purchase you agree that:
+            </p>
+            <ul>
+              <li>All transactions are processed by Google Play and subject to its Terms of Service.</li>
+              <li>Purchases are final and non-refundable except where required by applicable law.</li>
+              <li>Ball Studios reserves the right to modify, discontinue, or adjust the price
+                  of any in-app item at any time without prior notice.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Virtual currency</h3>
+          <p>
+            Coins and other virtual items earned or purchased in the App have no monetary
+            value outside the App. They cannot be transferred to other users, exchanged for
+            real money, or redeemed for goods or services. Virtual items may be forfeited if
+            the App is discontinued or your access is terminated.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Advertising</h3>
+          <p>
+            The App displays advertisements via Google AdMob, including banner, interstitial,
+            and rewarded ad formats. Users in the EEA and UK will be asked for consent before
+            personalized ads are shown, as required by GDPR and UK GDPR. See our
+            <a href="#privacy-arcane-spheres">Privacy Policy</a> for details on data collected
+            by AdMob.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Intellectual property</h3>
+          <p>
+            All content within the App — including but not limited to graphics, code, sound,
+            music, sphere designs, level layouts, and the Ball Studios name and logo — is the
+            exclusive property of Ball Studios and is protected by applicable intellectual
+            property laws. You may not copy, modify, distribute, decompile, reverse-engineer,
+            or create derivative works from any part of the App without express written
+            permission from Ball Studios.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Prohibited conduct</h3>
+          <div>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use cheats, exploits, automation software, or any unauthorized third-party
+                  tools to modify the App or gain an unfair advantage.</li>
+              <li>Attempt to access, tamper with, or disrupt the App's local data storage in
+                  order to obtain virtual items without purchase.</li>
+              <li>Use the App for any unlawful purpose or in violation of these Terms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Disclaimers</h3>
+          <p>
+            The App is provided <em>"as is"</em> without warranties of any kind, express or
+            implied, including merchantability, fitness for a particular purpose, or
+            non-infringement. Ball Studios does not warrant that the App will be error-free,
+            uninterrupted, or free of harmful components. Your use of the App is at your
+            sole risk.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Limitation of liability</h3>
+          <p>
+            To the fullest extent permitted by law, Ball Studios shall not be liable for any
+            indirect, incidental, special, consequential, or punitive damages arising from
+            your use of or inability to use the App, even if advised of the possibility of
+            such damages. Our total liability shall not exceed the amount you paid for
+            in-app purchases in the three months preceding the claim.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Changes to terms</h3>
+          <p>
+            Ball Studios reserves the right to update these Terms at any time. Changes will
+            be posted on this page with a revised date. Continued use of the App after
+            changes are posted constitutes your acceptance of the updated Terms.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Governing law</h3>
+          <p>
+            These Terms are governed by and construed in accordance with the laws of Colombia,
+            without regard to conflict-of-law provisions. Any disputes shall be subject to
+            the exclusive jurisdiction of the courts of Colombia.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Contact</h3>
+          <p>
+            Questions about these Terms:
+            <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-block" id="terms-habitos" style="margin-top:3rem">
+        <div class="policy-meta">
+          <h2>Hábitos</h2>
+          <span class="badge badge-type">Terms &amp; Conditions</span>
+          <span class="policy-updated">Last updated: June 25, 2026</span>
+        </div>
+
+        <div class="policy-section">
+          <h3>Agreement</h3>
+          <p>
+            By downloading, installing, or using <strong>Hábitos</strong> you agree to be
+            bound by these Terms and Conditions. If you do not agree, do not use the App.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>License</h3>
+          <p>
+            Ball Studios grants you a limited, personal, non-commercial, non-transferable,
+            revocable license to use the App on Android devices you own or control, solely
+            for your personal productivity and well-being purposes. You may not sublicense,
+            sell, resell, or commercially exploit the App or its content in any way.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>User account</h3>
+          <p>
+            Account creation is optional. If you choose to sign in with a Google account,
+            you are responsible for maintaining the confidentiality of your account and for
+            all activity that occurs under it. You may use the App fully in anonymous mode
+            without creating an account; in that case all data remains stored locally on
+            your device.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>User content</h3>
+          <p>
+            You retain full ownership of the content you create within the App, including
+            diary entries, voice memos, goals, and habit data. By enabling cloud backup you
+            grant Ball Studios a limited license to store and process that content solely
+            for the purpose of providing the backup and sync service. We do not use your
+            personal content for advertising or analytics.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>AI coach</h3>
+          <div>
+            <p>
+              The AI coaching feature provides personalized suggestions based on your habit
+              activity. By using this feature you acknowledge that:
+            </p>
+            <ul>
+              <li>Responses are generated by an AI model and are for informational and
+                  motivational purposes only. They do not constitute medical, psychological,
+                  or professional advice of any kind.</li>
+              <li>An anonymized summary of your habit statistics is sent to a third-party
+                  AI provider (DeepSeek) to generate responses. See our
+                  <a href="#privacy-habitos">Privacy Policy</a> for details.</li>
+              <li>Ball Studios is not responsible for decisions made based on AI coach
+                  suggestions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Premium subscription</h3>
+          <div>
+            <p>
+              The App offers an optional premium subscription that unlocks an increased
+              daily AI coach message limit. By subscribing you agree that:
+            </p>
+            <ul>
+              <li>Subscriptions are processed by Google Play and governed by its Terms of Service.</li>
+              <li>Charges are billed on a recurring basis until cancelled.</li>
+              <li>You may cancel at any time through your Google Play account. Cancellation
+                  takes effect at the end of the current billing period.</li>
+              <li>Ball Studios reserves the right to modify subscription pricing or features
+                  with reasonable prior notice.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Advertising</h3>
+          <p>
+            The App displays optional rewarded ads via Google AdMob. Watching a rewarded
+            ad is never required to use the core habit-tracking features. See our
+            <a href="#privacy-habitos">Privacy Policy</a> for details on data collected
+            by AdMob.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Intellectual property</h3>
+          <p>
+            All content within the App — including graphics, code, UI design, the
+            gamification system, league structure, and the Ball Studios name and logo —
+            is the exclusive property of Ball Studios and is protected by applicable
+            intellectual property laws. You may not copy, modify, distribute,
+            decompile, reverse-engineer, or create derivative works from any part of
+            the App without express written permission from Ball Studios.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Prohibited conduct</h3>
+          <div>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Manipulate or falsify habit completion data to gain points, leagues,
+                  or rewards unfairly.</li>
+              <li>Attempt to access, tamper with, or reverse-engineer the App's local
+                  storage or backend services.</li>
+              <li>Use the App for any unlawful purpose or in violation of these Terms.</li>
+              <li>Transmit harmful, offensive, or misleading content through any feature
+                  of the App.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Disclaimers</h3>
+          <p>
+            The App is provided <em>"as is"</em> without warranties of any kind, express
+            or implied. Ball Studios does not warrant that the App will be error-free,
+            uninterrupted, or that data will never be lost. Habit tracking and AI coaching
+            features are tools to support personal motivation and are not a substitute for
+            professional health, psychological, or medical advice. Your use of the App is
+            at your sole risk.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Limitation of liability</h3>
+          <p>
+            To the fullest extent permitted by law, Ball Studios shall not be liable for
+            any indirect, incidental, special, consequential, or punitive damages arising
+            from your use of or inability to use the App, including any loss of personal
+            data. Our total liability shall not exceed the amount you paid for premium
+            subscriptions in the three months preceding the claim.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Changes to terms</h3>
+          <p>
+            Ball Studios reserves the right to update these Terms at any time. Changes
+            will be posted on this page with a revised date. Continued use of the App
+            after changes are posted constitutes your acceptance of the updated Terms.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Governing law</h3>
+          <p>
+            These Terms are governed by and construed in accordance with the laws of
+            Colombia, without regard to conflict-of-law provisions. Any disputes shall
+            be subject to the exclusive jurisdiction of the courts of Colombia.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Contact</h3>
+          <p>
+            Questions about these Terms:
             <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
           </p>
         </div>
