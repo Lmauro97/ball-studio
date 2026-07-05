@@ -409,6 +409,21 @@
         box-shadow: 0 6px 28px rgba(255, 92, 43, 0.4);
       }
       .card-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .card-cta-soon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: transparent;
+        color: var(--muted);
+        border: 1px dashed rgba(255, 255, 255, 0.14);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        padding: 0.62rem 1.35rem;
+        border-radius: 9px;
+        width: fit-content;
+        margin-top: auto;
+      }
       .card-soon {
         background: transparent;
         border: 1px dashed rgba(255, 255, 255, 0.07);
@@ -670,7 +685,9 @@
               <p class="card-desc" style="margin-top:0.5rem">
                 A precision platformer where every jump counts. Roll and bounce
                 through 20 handcrafted levels across four distinct worlds — Space,
-                Cavern, Glacier, and Lava.
+                Cavern, Glacier, and Lava — collecting coins to unlock 26 ball
+                skins (including animal buddies like a cat, dog, and rabbit) and
+                permanent power-ups like shields, extra lives, and a coin magnet.
               </p>
             </div>
             <div class="card-tags">
@@ -678,6 +695,8 @@
               <span class="tag">Physics</span>
               <span class="tag">Checkpoints</span>
               <span class="tag">Shop</span>
+              <span class="tag">Power-ups</span>
+              <span class="tag">Achievements</span>
             </div>
             <div class="card-stats">
               <div class="stat">
@@ -689,7 +708,7 @@
                 <span class="stat-lbl">Worlds</span>
               </div>
               <div class="stat">
-                <span class="stat-val">6+</span>
+                <span class="stat-val">26</span>
                 <span class="stat-lbl">Skins</span>
               </div>
               <div class="stat">
@@ -713,30 +732,33 @@
             <div>
               <div class="card-title">Arcane Spheres</div>
               <p class="card-desc" style="margin-top:0.5rem">
-                A fast-paced 3D platformer in landscape. Race through
-                procedurally-varied levels at escalating speed, collect power-ups,
-                survive moving and bouncing platforms, and push your limit in
-                Endless mode.
+                A competitive 3D marble battler with elemental spheres. Choose from
+                11 unique spheres across 8 elements and battle in four distinct
+                modes: knock rivals off a floating arena in real-time combat, get
+                your sphere closest to the central hole in bocce-style Proximity
+                mode, race through 50 procedurally-generated runner levels, or
+                push your limit in Endless mode. Earn shards in-game to unlock
+                spheres and cosmetic skins — no real-money purchases required.
               </p>
             </div>
             <div class="card-tags">
-              <span class="tag">Platformer</span>
-              <span class="tag">Speed</span>
-              <span class="tag">Power-ups</span>
+              <span class="tag">Battle</span>
+              <span class="tag">Physics</span>
+              <span class="tag">Race</span>
               <span class="tag">Endless</span>
               <span class="tag">Upgrades</span>
             </div>
             <div class="card-stats">
               <div class="stat">
-                <span class="stat-val">49</span>
+                <span class="stat-val">50</span>
                 <span class="stat-lbl">Levels</span>
               </div>
               <div class="stat">
-                <span class="stat-val">8</span>
+                <span class="stat-val">11</span>
                 <span class="stat-lbl">Spheres</span>
               </div>
               <div class="stat">
-                <span class="stat-val">2</span>
+                <span class="stat-val">4</span>
                 <span class="stat-lbl">Modes</span>
               </div>
               <div class="stat">
@@ -756,9 +778,52 @@
       <div class="catalog-category">
         <div class="category-header">
           <span class="category-label">Apps</span>
-          <span class="category-count">1 published</span>
+          <span class="category-count">1 published · 1 in development</span>
         </div>
         <div class="product-grid">
+          <div class="product-card">
+            <div class="card-meta">
+              <span class="badge badge-type">AI Companion</span>
+              <span class="badge badge-soon">● In Development</span>
+              <span class="badge badge-platform">Android</span>
+            </div>
+            <div>
+              <div class="card-title">TalkToMe</div>
+              <p class="card-desc" style="margin-top:0.5rem">
+                A conversational companion app with a roster of AI-driven
+                characters — including ones styled as a psychologist,
+                nutritionist, personal coach, and language tutor — plus
+                built-in mini-games like memory, hangman, and a career maze
+                quiz that reward you with credits to unlock new characters
+                and customization.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">AI Companion</span>
+              <span class="tag">Chat</span>
+              <span class="tag">Mini-games</span>
+              <span class="tag">Customization</span>
+            </div>
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-val">15</span>
+                <span class="stat-lbl">Characters</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">7</span>
+                <span class="stat-lbl">Mini-games</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">3</span>
+                <span class="stat-lbl">Languages</span>
+              </div>
+              <div class="stat">
+                <span class="stat-val">AI</span>
+                <span class="stat-lbl">Chat</span>
+              </div>
+            </div>
+            <span class="card-cta-soon">Coming soon to Google Play</span>
+          </div>
           <div class="product-card">
             <div class="card-meta">
               <span class="badge badge-type">Productivity</span>
@@ -863,6 +928,16 @@
             <span class="pii-app">Hábitos</span>
             <span class="pii-type">Terms &amp; Conditions</span>
             <a href="#terms-habitos" class="pii-link">Read terms ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">TalkToMe <span style="font-weight:400;color:var(--muted);font-size:0.72rem">(in development)</span></span>
+            <span class="pii-type">App · Android</span>
+            <a href="#privacy-hablame" class="pii-link">Read policy ↓</a>
+          </div>
+          <div class="privacy-index-item">
+            <span class="pii-app">TalkToMe <span style="font-weight:400;color:var(--muted);font-size:0.72rem">(in development)</span></span>
+            <span class="pii-type">Terms &amp; Conditions</span>
+            <a href="#terms-hablame" class="pii-link">Read terms ↓</a>
           </div>
         </div>
         <p style="font-size:0.75rem;color:var(--muted);margin-top:1.25rem">
@@ -975,7 +1050,7 @@
           <div class="policy-meta">
             <h2>Arcane Spheres</h2>
             <span class="badge badge-type">Privacy Policy</span>
-            <span class="policy-updated">Last updated: June 25, 2026</span>
+            <span class="policy-updated">Last updated: July 5, 2026</span>
           </div>
           <div class="policy-section">
             <h3>Overview</h3>
@@ -990,17 +1065,9 @@
             <h3>Data we collect</h3>
             <p>
               Arcane Spheres does not collect personal information through its own systems.
-              All game progress — current level, coins, purchased upgrades, equipped sphere skin,
-              and settings — is stored locally on your device and is never transmitted to our servers.
-            </p>
-          </div>
-          <div class="policy-section">
-            <h3>In-app purchases</h3>
-            <p>
-              The App offers optional in-app purchases (coins, upgrades) processed entirely
-              by <strong>Google Play</strong>. We do not receive or store any payment information.
-              All transactions are governed by
-              <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play's Terms of Service</a>.
+              All game progress — current level, earned shards and crystals, unlocked spheres
+              and upgrades, equipped sphere and cosmetic skin, and settings — is stored locally
+              on your device and is never transmitted to our servers.
             </p>
           </div>
           <div class="policy-section">
@@ -1008,8 +1075,9 @@
             <div>
               <p>
                 The App uses <strong>Google AdMob</strong> to display advertisements, including
-                banner ads (main menu), interstitial ads (between levels), and optional rewarded
-                ads. AdMob may collect data to serve personalized ads, including:
+                banner ads, interstitial ads (between matches and on game over), and optional
+                rewarded ads (to revive after a run or double level-clear rewards). AdMob may
+                collect data to serve personalized ads, including:
               </p>
               <ul>
                 <li>Device identifiers (Advertising ID)</li>
@@ -1040,8 +1108,7 @@
               Ball Studios does not process personal data through its own systems for this App.
               Advertising data processed by Google AdMob relies on your <strong>consent</strong>
               (EEA/UK users, via Google's UMP) or <strong>legitimate interest</strong>
-              (non-personalized ads). In-app purchases are processed by Google Play under a
-              <strong>contractual basis</strong>. Local game data on your device is not subject to GDPR.
+              (non-personalized ads). Local game data on your device is not subject to GDPR.
             </p>
           </div>
           <div class="policy-section">
@@ -1064,8 +1131,7 @@
             <h3>Data retention</h3>
             <p>
               Ball Studios retains no personal data on its servers. Game data persists on your device
-              until you uninstall the App or reset progress. Google Play retains purchase records per
-              their own policies. AdMob data retention is governed by
+              until you uninstall the App or reset progress. AdMob data retention is governed by
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
             </p>
           </div>
@@ -1245,6 +1311,185 @@
             </p>
           </div>
         </div>
+
+        <!-- ── TalkToMe Privacy Policy ── -->
+        <div class="policy-block" id="privacy-hablame" style="margin-top:3rem">
+          <div class="policy-meta">
+            <h2>TalkToMe</h2>
+            <span class="badge badge-type">Privacy Policy</span>
+            <span class="badge badge-soon">In Development</span>
+            <span class="policy-updated">Last updated: July 5, 2026</span>
+          </div>
+          <div class="policy-section">
+            <h3>Overview</h3>
+            <p>
+              Ball Studios ("we", "our") operates the mobile application
+              <strong>TalkToMe</strong> (package ID:
+              <code style="font-size:0.8rem;background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:4px;color:var(--blue)">com.lsalazarbedon.hablame</code>).
+              This document describes how data is collected and used when you use the App.
+              TalkToMe is a conversational companion app: you chat with a roster of
+              AI-driven characters, some styled as specialists (a psychologist,
+              nutritionist, personal coach, language tutor, and others), and play
+              built-in mini-games that reward you with credits.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Data we collect</h3>
+            <div>
+              <p>
+                Every install is identified by an anonymous Firebase account — no name,
+                email, or phone number is required to use the App. The following data is
+                stored on our servers, tied to that anonymous identifier:
+              </p>
+              <ul>
+                <li>Your credit balance and daily bonus status</li>
+                <li>Your conversation history with each AI character</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                If you choose the optional "continue with email" flow, the email address
+                and display name you enter are stored <strong>only locally on your
+                device</strong> to personalize how the App addresses you — they are not
+                transmitted to or stored on our servers. Your account identity remains the
+                same anonymous Firebase identifier either way. Preferences, game scores,
+                and character customization are also stored only on your device.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>AI companions</h3>
+            <div>
+              <p>
+                The App's core feature is conversing with AI-generated characters. In
+                compliance with the <strong>EU AI Act</strong> (in force August 2026), we
+                inform you that these characters are powered by an artificial intelligence
+                system, not a human — this is disclosed the first time you open the App.
+              </p>
+              <p style="margin-top:0.75rem">
+                When you send a message, it is forwarded from a secure backend proxy
+                (hosted on Render) to <strong>DeepSeek</strong> (operated by DeepSeek AI,
+                People's Republic of China), which generates the reply. Unlike a
+                statistics-only integration, the message content itself — what you type in
+                the chat — is sent to DeepSeek to produce a relevant response.
+              </p>
+              <p style="margin-top:0.75rem">
+                <strong>International transfer notice:</strong> DeepSeek is based in China,
+                a country without an EU adequacy decision. By using the App, you
+                acknowledge that your messages will be transferred to and processed in
+                China under DeepSeek's terms. Avoid sending information in the chat that
+                you would not want processed by a third party (ID documents, passwords,
+                financial details, etc.).
+              </p>
+              <p style="margin-top:0.75rem">
+                DeepSeek's data practices are governed by
+                <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">DeepSeek's Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Advertising</h3>
+            <div>
+              <p>
+                The App uses <strong>Google AdMob</strong> to display banner ads in the
+                mini-games. AdMob may collect data to serve personalized ads, including:
+              </p>
+              <ul>
+                <li>Device identifiers (Advertising ID)</li>
+                <li>IP address and approximate location</li>
+                <li>Interaction data with displayed ads</li>
+                <li>App usage information</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                Users in the <strong>EEA and UK</strong> are shown a consent dialog powered
+                by <strong>Google's User Messaging Platform (UMP)</strong> before
+                personalized ads are served. You may withdraw consent at any time through
+                your device settings under <em>Privacy → Ads</em>. Google's data practices
+                are governed by
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Backup &amp; data portability</h3>
+            <p>
+              You can export an encrypted backup of your conversations and progress at any
+              time from the App's profile screen, protected by a password you choose. That
+              password is the only way to decrypt the file — Ball Studios cannot recover it
+              for you — and safeguarding it is your responsibility. The same screen lets you
+              restore a previously exported backup.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Children's privacy</h3>
+            <p>
+              The App is not directed at children under 13. We do not knowingly collect
+              personal data from children. If you believe a child has provided personal
+              information, contact us and we will delete it promptly.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Data deletion</h3>
+            <p>
+              Because accounts are anonymous, uninstalling the App removes it from your
+              device but does not automatically delete the associated server-side data —
+              we have no way to link that data back to you once you lose access to the
+              anonymous identifier stored on your device. If you would like your
+              conversation history and credits deleted, contact us
+              <strong>before uninstalling</strong> so we can locate and remove your record,
+              or use the in-App account deletion option if available in a future update.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Lawful basis (EEA &amp; UK)</h3>
+            <div>
+              <p>Where we process personal data, the lawful basis under GDPR is:</p>
+              <ul>
+                <li><strong>Contract</strong> — storing your credits and conversation
+                    history to provide the core service</li>
+                <li><strong>Consent</strong> — the AI-processing and data-storage notice
+                    shown and accepted the first time you open the App; personalized
+                    advertising via AdMob (EEA/UK)</li>
+                <li><strong>Legitimate interest</strong> — non-personalized ads; anonymous
+                    usage analytics to improve the App</li>
+              </ul>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Your rights</h3>
+            <div>
+              <p>If you are in the EEA, UK, or California, you have the following rights:</p>
+              <ul>
+                <li><strong>Access</strong> — request a copy of personal data we hold about you</li>
+                <li><strong>Erasure</strong> — request deletion of your conversation history and credits</li>
+                <li><strong>Portability</strong> — export your conversations and progress via the App's backup feature</li>
+                <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+                <li><strong>Opt-out of data sharing</strong> (California) — opt out of ad data sharing via device settings</li>
+              </ul>
+              <p style="margin-top:0.75rem">
+                To exercise these rights, contact us at
+                <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+                We will respond within 30 days.
+              </p>
+            </div>
+          </div>
+          <div class="policy-section">
+            <h3>Data retention</h3>
+            <p>
+              Conversation history and credits persist on our servers until you request
+              deletion or we discontinue the App. Locally stored preferences and game
+              progress persist until you uninstall the App. AdMob data retention is governed
+              by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>,
+              and DeepSeek's by its own
+              <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+            </p>
+          </div>
+          <div class="policy-section">
+            <h3>Contact</h3>
+            <p>
+              Questions about this policy:
+              <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1257,7 +1502,7 @@
         <div class="policy-meta">
           <h2>Rolling Escape</h2>
           <span class="badge badge-type">Terms &amp; Conditions</span>
-          <span class="policy-updated">Last updated: June 25, 2026</span>
+          <span class="policy-updated">Last updated: July 5, 2026</span>
         </div>
 
         <div class="policy-section">
@@ -1269,23 +1514,16 @@
           <p>Ball Studios grants you a limited, personal, non-commercial, non-transferable, revocable license to use the App on Android devices you own or control, solely for your personal entertainment. You may not sublicense, sell, resell, or commercially exploit the App or its content in any way.</p>
         </div>
         <div class="policy-section">
-          <h3>In-app purchases</h3>
-          <div>
-            <p>The App offers optional cosmetic items (skins, coins) available for purchase through Google Play. By making a purchase you agree that:</p>
-            <ul>
-              <li>All transactions are processed by Google Play and subject to its Terms of Service.</li>
-              <li>Purchases are final and non-refundable except where required by applicable law.</li>
-              <li>Ball Studios reserves the right to modify pricing or discontinue items at any time without prior notice.</li>
-            </ul>
-          </div>
+          <h3>Virtual currency &amp; rewarded ads</h3>
+          <p>The App does not offer real-money purchases. Coins are earned by playing — completing levels and scoring points — and are spent inside the App to unlock cosmetic ball skins and permanent gameplay power-ups (such as shields, extra lives, and a coin magnet). Some items can optionally be unlocked faster by watching a rewarded video ad via Google AdMob instead of spending coins. Ball Studios reserves the right to modify coin rewards, prices, or available items at any time without prior notice.</p>
         </div>
         <div class="policy-section">
           <h3>Virtual items</h3>
-          <p>Coins and skins in the App are virtual items with no monetary value outside the App. They cannot be transferred to other users, exchanged for real money, or redeemed for goods or services.</p>
+          <p>Coins, skins, and power-ups in the App are virtual items with no monetary value outside the App. They cannot be transferred to other users, exchanged for real money, or redeemed for goods or services.</p>
         </div>
         <div class="policy-section">
           <h3>Advertising</h3>
-          <p>The App displays advertisements via Google AdMob. Users in the EEA and UK will be asked for consent before personalized ads are shown. See our <a href="#privacy-rolling-escape">Privacy Policy</a> for details.</p>
+          <p>The App displays advertisements via Google AdMob, including optional rewarded video ads. Users in the EEA and UK will be asked for consent before personalized ads are shown. See our <a href="#privacy-rolling-escape">Privacy Policy</a> for details.</p>
         </div>
         <div class="policy-section">
           <h3>Intellectual property</h3>
@@ -1317,7 +1555,7 @@
         <div class="policy-meta">
           <h2>Arcane Spheres</h2>
           <span class="badge badge-type">Terms &amp; Conditions</span>
-          <span class="policy-updated">Last updated: June 25, 2026</span>
+          <span class="policy-updated">Last updated: July 5, 2026</span>
         </div>
 
         <div class="policy-section">
@@ -1339,37 +1577,35 @@
         </div>
 
         <div class="policy-section">
-          <h3>In-app purchases</h3>
-          <div>
-            <p>
-              The App offers optional virtual items (coins, upgrades) available for purchase
-              through Google Play. By making a purchase you agree that:
-            </p>
-            <ul>
-              <li>All transactions are processed by Google Play and subject to its Terms of Service.</li>
-              <li>Purchases are final and non-refundable except where required by applicable law.</li>
-              <li>Ball Studios reserves the right to modify, discontinue, or adjust the price
-                  of any in-app item at any time without prior notice.</li>
-            </ul>
-          </div>
+          <h3>Virtual currency &amp; rewarded ads</h3>
+          <p>
+            The App does not offer real-money purchases. Shards and Crystals are virtual
+            currencies earned entirely through gameplay — completing matches, runner levels,
+            daily login streaks, and similar in-game activities. Shards are spent to unlock
+            playable spheres and permanent upgrades. Crystals are spent on premium cosmetic
+            skins. Some rewards can optionally be doubled, or a run revived, by watching a
+            rewarded video ad via Google AdMob. Ball Studios reserves the right to modify
+            earn rates, prices, or available items at any time without prior notice.
+          </p>
         </div>
 
         <div class="policy-section">
-          <h3>Virtual currency</h3>
+          <h3>Virtual items</h3>
           <p>
-            Coins and other virtual items earned or purchased in the App have no monetary
-            value outside the App. They cannot be transferred to other users, exchanged for
-            real money, or redeemed for goods or services. Virtual items may be forfeited if
-            the App is discontinued or your access is terminated.
+            Shards, Crystals, unlocked spheres, and cosmetic skins earned in the App have no
+            monetary value outside the App. They cannot be transferred to other users,
+            exchanged for real money, or redeemed for goods or services. Virtual items may be
+            forfeited if the App is discontinued or your access is terminated.
           </p>
         </div>
 
         <div class="policy-section">
           <h3>Advertising</h3>
           <p>
-            The App displays advertisements via Google AdMob, including banner, interstitial,
-            and rewarded ad formats. Users in the EEA and UK will be asked for consent before
-            personalized ads are shown, as required by GDPR and UK GDPR. See our
+            The App displays advertisements via Google AdMob, including banner ads,
+            interstitial ads (between matches and on game over), and optional rewarded ads.
+            Users in the EEA and UK will be asked for consent before personalized ads are
+            shown, as required by GDPR and UK GDPR. See our
             <a href="#privacy-arcane-spheres">Privacy Policy</a> for details on data collected
             by AdMob.
           </p>
@@ -1418,8 +1654,8 @@
             To the fullest extent permitted by law, Ball Studios shall not be liable for any
             indirect, incidental, special, consequential, or punitive damages arising from
             your use of or inability to use the App, even if advised of the possibility of
-            such damages. Our total liability shall not exceed the amount you paid for
-            in-app purchases in the three months preceding the claim.
+            such damages. As the App is free-to-play with no real-money purchases, our total
+            liability shall not exceed US $1.00.
           </p>
         </div>
 
@@ -1611,6 +1847,184 @@
             These Terms are governed by and construed in accordance with the laws of
             Colombia, without regard to conflict-of-law provisions. Any disputes shall
             be subject to the exclusive jurisdiction of the courts of Colombia.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Contact</h3>
+          <p>
+            Questions about these Terms:
+            <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-block" id="terms-hablame" style="margin-top:3rem">
+        <div class="policy-meta">
+          <h2>TalkToMe</h2>
+          <span class="badge badge-type">Terms &amp; Conditions</span>
+          <span class="badge badge-soon">In Development</span>
+          <span class="policy-updated">Last updated: July 5, 2026</span>
+        </div>
+
+        <div class="policy-section">
+          <h3>Agreement</h3>
+          <p>
+            By downloading, installing, or using <strong>TalkToMe</strong> you agree to be
+            bound by these Terms and Conditions. If you do not agree, do not use the App.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Development status</h3>
+          <p>
+            TalkToMe is currently in <strong>active development</strong>. Features, available
+            characters, mini-games, credit costs, and content are subject to change without
+            notice, and the App may not yet be publicly available on Google Play.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>License</h3>
+          <p>
+            Ball Studios grants you a limited, personal, non-commercial, non-transferable,
+            revocable license to use the App on Android devices you own or control, solely
+            for your personal use. You may not sublicense, sell, resell, or commercially
+            exploit the App or its content in any way.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>User account</h3>
+          <p>
+            The App requires an account to save your credits, conversation history, and
+            progress across devices. You are responsible for maintaining the confidentiality
+            of your login credentials and for all activity that occurs under your account.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>AI companions</h3>
+          <div>
+            <p>
+              The App's core feature is conversing with AI-generated characters ("agents"),
+              some of which are styled as specialists (for example, a psychologist,
+              nutritionist, personal coach, or language tutor). By using this feature you
+              acknowledge that:
+            </p>
+            <ul>
+              <li>Responses are generated by an artificial intelligence model, not a human,
+                  and are for entertainment, informational, and companionship purposes only.
+                  They do not constitute medical, psychological, legal, financial, or other
+                  professional advice of any kind, regardless of how a character is styled.</li>
+              <li>Your messages are processed by a third-party AI provider to generate
+                  responses. The App discloses this before first use; if you require more
+                  specific information about the provider used and where it processes data,
+                  see our <a href="#privacy-hablame">Privacy Policy</a> or contact us at the
+                  email below.</li>
+              <li>Avoid sharing sensitive personal information in chat (ID documents,
+                  passwords, financial data, health records) that you would not want
+                  processed by that third-party provider.</li>
+              <li>Ball Studios is not responsible for decisions made based on conversations
+                  with AI characters.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Data &amp; backup</h3>
+          <p>
+            Your account information (login and credits) and conversation history are
+            stored on our servers so you can access them across devices. You may export an
+            encrypted backup of your data at any time from the App's profile screen;
+            choosing and safeguarding that file's password is your responsibility — Ball
+            Studios cannot recover it for you.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Credits &amp; virtual items</h3>
+          <p>
+            The App uses a virtual credit system to unlock messages, characters, and
+            cosmetic customization. Credits can be earned through gameplay or daily bonuses
+            and have no monetary value outside the App. They cannot be transferred to other
+            users, exchanged for real money, or redeemed for goods or services. Ball Studios
+            reserves the right to adjust credit costs or rewards at any time.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Advertising</h3>
+          <p>
+            The App may display advertisements via Google AdMob. Users in the EEA and UK
+            will be asked for consent before personalized ads are shown.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Intellectual property</h3>
+          <p>
+            All content within the App — including character designs, dialogue, UI design,
+            game mechanics, and the Ball Studios name and logo — is the exclusive property
+            of Ball Studios and is protected by applicable intellectual property laws. You
+            may not copy, modify, distribute, decompile, reverse-engineer, or create
+            derivative works from any part of the App without express written permission
+            from Ball Studios.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Prohibited conduct</h3>
+          <div>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use the App to generate, request, or distribute illegal, abusive, or
+                  harmful content.</li>
+              <li>Attempt to manipulate the credit system, tamper with locally or
+                  server-stored data, or reverse-engineer the App's backend services.</li>
+              <li>Use the App for any unlawful purpose or in violation of these Terms.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <h3>Disclaimers</h3>
+          <p>
+            The App is provided <em>"as is"</em> without warranties of any kind, express or
+            implied. Ball Studios does not warrant that the App will be error-free,
+            uninterrupted, or free of harmful components. Conversations with AI characters
+            are a form of entertainment and companionship, not a substitute for professional
+            medical, psychological, or financial advice. Your use of the App is at your
+            sole risk.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Limitation of liability</h3>
+          <p>
+            To the fullest extent permitted by law, Ball Studios shall not be liable for any
+            indirect, incidental, special, consequential, or punitive damages arising from
+            your use of or inability to use the App, including reliance on any AI-generated
+            content. Our total liability shall not exceed the amount you paid for in-app
+            purchases, if any, in the three months preceding the claim.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Changes to terms</h3>
+          <p>
+            Ball Studios reserves the right to update these Terms at any time. Changes will
+            be posted on this page with a revised date. Continued use of the App after
+            changes are posted constitutes your acceptance of the updated Terms.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h3>Governing law</h3>
+          <p>
+            These Terms are governed by and construed in accordance with the laws of
+            Colombia, without regard to conflict-of-law provisions. Any disputes shall be
+            subject to the exclusive jurisdiction of the courts of Colombia.
           </p>
         </div>
 
