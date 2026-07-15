@@ -1,0 +1,37 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<footer>
+  <span>© 2026 Ball Studios</span>
+  <div class="footer-links">
+    <a href={`${base}/#catalog`}>Products</a>
+    <a href={`${base}/privacy`}>Privacy</a>
+    <a href="mailto:lsalazarbedon@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 1.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 1.75rem; }
+  @media (max-width: 640px) {
+    footer { padding: 1.5rem 1.25rem; }
+  }
+  @media (max-width: 540px) {
+    footer { justify-content: center; text-align: center; }
+    .footer-links { justify-content: center; flex-wrap: wrap; gap: 1.25rem; }
+  }
+</style>

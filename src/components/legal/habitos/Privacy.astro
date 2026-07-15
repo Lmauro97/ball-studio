@@ -1,0 +1,161 @@
+---
+import PolicyBlock from '../PolicyBlock.astro';
+import PolicySection from '../PolicySection.astro';
+---
+
+<PolicyBlock
+  id="privacy-habitos"
+  title="Habits"
+  subtitle="(Hábitos)"
+  badgeLabel="Privacy Policy"
+  updated="June 25, 2026"
+>
+  <PolicySection heading="Overview">
+    <p>
+      Ball Studios ("we", "our") operates the mobile application
+      <strong>Habits</strong> (known as <em>Hábitos</em> in some markets, package ID:
+      <code>com.ballstudio.habitos.app</code>).
+      This document describes how data is collected and used when you use the App.
+      Habits is a habit tracker and personal productivity tool that also offers an
+      AI coaching feature and an optional cloud backup via Firebase.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Data we collect">
+    <p>
+      Hábitos is built local-first: your habits, goals, diary entries, mood logs,
+      audio voice memos, and points are stored on your device and never transmitted
+      to our servers unless you choose to sign in. When you use the optional
+      Google sign-in, the following additional data may be collected:
+    </p>
+    <ul>
+      <li>Google account display name and email address (used only for account identification)</li>
+      <li>A Firebase user ID linked to your account</li>
+      <li>Habit and goal data synced to Firestore for backup and cross-device access</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      You can use the App fully without creating an account. Anonymous usage does
+      not transmit any personal data to our servers.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="AI coach">
+    <p>
+      The App includes an <strong>AI coaching feature</strong> powered by DeepSeek. In compliance
+      with the <strong>EU AI Act</strong> (in force August 2026), we inform you that this feature
+      uses an artificial intelligence system to generate personalized habit advice.
+      <strong>You are always interacting with an AI, not a human coach.</strong>
+    </p>
+    <p style="margin-top:0.75rem">
+      When you use the AI coach, a summary of your habit and goal activity is sent to a secure
+      backend proxy (hosted on Render) which forwards the request to
+      <strong>DeepSeek</strong> (operated by DeepSeek AI, People's Republic of China).
+      This summary contains aggregated habit statistics only — it does not include your name,
+      email, diary entries, voice memos, or any directly identifying information.
+      Requests are not stored by Ball Studios beyond the session duration.
+    </p>
+    <p style="margin-top:0.75rem">
+      <strong>International transfer notice:</strong> DeepSeek is based in China, a country
+      without an EU adequacy decision. By using the AI coach, you acknowledge that your
+      anonymized habit statistics will be transferred to and processed in China under
+      DeepSeek's terms. If you do not wish this transfer, do not use the AI coach feature —
+      all core habit-tracking functionality remains available without it.
+    </p>
+    <p style="margin-top:0.75rem">
+      DeepSeek's data practices are governed by
+      <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">DeepSeek's Privacy Policy</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Advertising">
+    <p>
+      The App uses <strong>Google AdMob</strong> to display rewarded ads. Watching
+      a rewarded ad is optional and unlocks additional AI coach interactions.
+      AdMob may collect data to serve personalized ads, including:
+    </p>
+    <ul>
+      <li>Device identifiers (Advertising ID)</li>
+      <li>IP address and approximate location</li>
+      <li>Interaction data with displayed ads</li>
+      <li>App usage information</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      You can opt out of personalized advertising in your device settings under
+      <em>Privacy → Ads</em>. Google's data practices are governed by
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="In-app purchases">
+    <p>
+      The App offers an optional premium subscription processed by
+      <strong>Google Play</strong>. We do not receive or store payment card details.
+      All transactions are governed by
+      <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener">Google Play's Terms of Service</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Push notifications">
+    <p>
+      With your permission, the App sends local push notifications as habit reminders
+      and weekly review prompts. These notifications are scheduled on your device and
+      do not involve transmitting personal data to our servers. You can disable
+      notifications at any time in your device settings.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Children's privacy">
+    <p>
+      The App is not directed at children under 13. We do not knowingly collect
+      personal data from children. If you believe a child has provided personal
+      information, contact us and we will delete it promptly.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Data deletion">
+    <p>
+      Local data can be removed at any time by uninstalling the App. If you signed
+      in with a Google account, you can request deletion of your Firebase data by
+      contacting us at the address below and we will process the request within
+      30 days. You can also export and delete your data using the backup and restore
+      feature inside the App's profile screen.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Lawful basis (EEA & UK)">
+    <p>Where we process personal data, the lawful basis under GDPR is:</p>
+    <ul>
+      <li><strong>Contract</strong> — account data (name, email, Firebase ID) required to provide cloud sync and the signed-in service</li>
+      <li><strong>Consent</strong> — personalized advertising via AdMob (EEA/UK); AI coach data transfer to DeepSeek</li>
+      <li><strong>Legitimate interest</strong> — non-personalized ads; anonymous usage analytics to improve the App</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      Anonymous (non-signed-in) usage involves no personal data processing by Ball Studios.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Your rights">
+    <p>If you are in the EEA, UK, or California, you have the following rights:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of personal data we hold about you</li>
+      <li><strong>Rectification</strong> — request correction of inaccurate data</li>
+      <li><strong>Erasure</strong> — request deletion of your account and associated data</li>
+      <li><strong>Portability</strong> — receive your habit and goal data in a structured format (available via the App's export feature)</li>
+      <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+      <li><strong>Withdraw consent</strong> — withdraw AI coach or ad consent at any time without affecting other features</li>
+      <li><strong>Opt-out of data sharing</strong> (California) — opt out of ad data sharing via device settings</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      To exercise these rights, contact us at
+      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+      We will respond within 30 days.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Contact">
+    <p>
+      Questions about this policy:
+      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+    </p>
+  </PolicySection>
+</PolicyBlock>

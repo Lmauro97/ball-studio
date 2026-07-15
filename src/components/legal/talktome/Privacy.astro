@@ -1,0 +1,171 @@
+---
+import PolicyBlock from '../PolicyBlock.astro';
+import PolicySection from '../PolicySection.astro';
+---
+
+<PolicyBlock
+  id="privacy-hablame"
+  title="TalkToMe"
+  badgeLabel="Privacy Policy"
+  extraBadge="In Development"
+  updated="July 5, 2026"
+>
+  <PolicySection heading="Overview">
+    <p>
+      Ball Studios ("we", "our") operates the mobile application
+      <strong>TalkToMe</strong> (package ID:
+      <code>com.lsalazarbedon.hablame</code>).
+      This document describes how data is collected and used when you use the App.
+      TalkToMe is a conversational companion app: you chat with a roster of
+      AI-driven characters, some styled as specialists (a psychologist,
+      nutritionist, personal coach, language tutor, and others), and play
+      built-in mini-games that reward you with credits.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Data we collect">
+    <p>
+      Every install is identified by an anonymous Firebase account — no name,
+      email, or phone number is required to use the App. The following data is
+      stored on our servers, tied to that anonymous identifier:
+    </p>
+    <ul>
+      <li>Your credit balance and daily bonus status</li>
+      <li>Your conversation history with each AI character</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      If you choose the optional "continue with email" flow, the email address
+      and display name you enter are stored <strong>only locally on your
+      device</strong> to personalize how the App addresses you — they are not
+      transmitted to or stored on our servers. Your account identity remains the
+      same anonymous Firebase identifier either way. Preferences, game scores,
+      and character customization are also stored only on your device.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="AI companions">
+    <p>
+      The App's core feature is conversing with AI-generated characters. In
+      compliance with the <strong>EU AI Act</strong> (in force August 2026), we
+      inform you that these characters are powered by an artificial intelligence
+      system, not a human — this is disclosed the first time you open the App.
+    </p>
+    <p style="margin-top:0.75rem">
+      When you send a message, it is forwarded from a secure backend proxy
+      (hosted on Render) to <strong>DeepSeek</strong> (operated by DeepSeek AI,
+      People's Republic of China), which generates the reply. Unlike a
+      statistics-only integration, the message content itself — what you type in
+      the chat — is sent to DeepSeek to produce a relevant response.
+    </p>
+    <p style="margin-top:0.75rem">
+      <strong>International transfer notice:</strong> DeepSeek is based in China,
+      a country without an EU adequacy decision. By using the App, you
+      acknowledge that your messages will be transferred to and processed in
+      China under DeepSeek's terms. Avoid sending information in the chat that
+      you would not want processed by a third party (ID documents, passwords,
+      financial details, etc.).
+    </p>
+    <p style="margin-top:0.75rem">
+      DeepSeek's data practices are governed by
+      <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">DeepSeek's Privacy Policy</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Advertising">
+    <p>
+      The App uses <strong>Google AdMob</strong> to display banner ads in the
+      mini-games. AdMob may collect data to serve personalized ads, including:
+    </p>
+    <ul>
+      <li>Device identifiers (Advertising ID)</li>
+      <li>IP address and approximate location</li>
+      <li>Interaction data with displayed ads</li>
+      <li>App usage information</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      Users in the <strong>EEA and UK</strong> are shown a consent dialog powered
+      by <strong>Google's User Messaging Platform (UMP)</strong> before
+      personalized ads are served. You may withdraw consent at any time through
+      your device settings under <em>Privacy → Ads</em>. Google's data practices
+      are governed by
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Backup & data portability">
+    <p>
+      You can export an encrypted backup of your conversations and progress at any
+      time from the App's profile screen, protected by a password you choose. That
+      password is the only way to decrypt the file — Ball Studios cannot recover it
+      for you — and safeguarding it is your responsibility. The same screen lets you
+      restore a previously exported backup.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Children's privacy">
+    <p>
+      The App is not directed at children under 13. We do not knowingly collect
+      personal data from children. If you believe a child has provided personal
+      information, contact us and we will delete it promptly.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Data deletion">
+    <p>
+      Because accounts are anonymous, uninstalling the App removes it from your
+      device but does not automatically delete the associated server-side data —
+      we have no way to link that data back to you once you lose access to the
+      anonymous identifier stored on your device. If you would like your
+      conversation history and credits deleted, contact us
+      <strong>before uninstalling</strong> so we can locate and remove your record,
+      or use the in-App account deletion option if available in a future update.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Lawful basis (EEA & UK)">
+    <p>Where we process personal data, the lawful basis under GDPR is:</p>
+    <ul>
+      <li><strong>Contract</strong> — storing your credits and conversation
+          history to provide the core service</li>
+      <li><strong>Consent</strong> — the AI-processing and data-storage notice
+          shown and accepted the first time you open the App; personalized
+          advertising via AdMob (EEA/UK)</li>
+      <li><strong>Legitimate interest</strong> — non-personalized ads; anonymous
+          usage analytics to improve the App</li>
+    </ul>
+  </PolicySection>
+
+  <PolicySection heading="Your rights">
+    <p>If you are in the EEA, UK, or California, you have the following rights:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of personal data we hold about you</li>
+      <li><strong>Erasure</strong> — request deletion of your conversation history and credits</li>
+      <li><strong>Portability</strong> — export your conversations and progress via the App's backup feature</li>
+      <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+      <li><strong>Opt-out of data sharing</strong> (California) — opt out of ad data sharing via device settings</li>
+    </ul>
+    <p style="margin-top:0.75rem">
+      To exercise these rights, contact us at
+      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+      We will respond within 30 days.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Data retention">
+    <p>
+      Conversation history and credits persist on our servers until you request
+      deletion or we discontinue the App. Locally stored preferences and game
+      progress persist until you uninstall the App. AdMob data retention is governed
+      by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>,
+      and DeepSeek's by its own
+      <a href="https://www.deepseek.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Contact">
+    <p>
+      Questions about this policy:
+      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+    </p>
+  </PolicySection>
+</PolicyBlock>

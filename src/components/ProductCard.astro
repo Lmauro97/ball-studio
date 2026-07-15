@@ -1,0 +1,174 @@
+---
+interface Badge {
+  variant: 'type' | 'live' | 'soon' | 'platform';
+  label: string;
+}
+interface Stat {
+  value: string;
+  label: string;
+}
+interface Cta {
+  type: 'link' | 'soon';
+  href?: string;
+  label: string;
+}
+interface Props {
+  title: string;
+  badges: Badge[];
+  description: string;
+  tags: string[];
+  stats: Stat[];
+  cta: Cta;
+}
+
+const { title, badges, description, tags, stats, cta } = Astro.props;
+---
+
+<div class="product-card">
+  <div class="card-meta">
+    {badges.map((badge) => <span class={`badge badge-${badge.variant}`}>{badge.label}</span>)}
+  </div>
+  <div>
+    <div class="card-title">{title}</div>
+    <p class="card-desc" style="margin-top:0.5rem">{description}</p>
+  </div>
+  <div class="card-tags">
+    {tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+  <div class="card-stats">
+    {stats.map((stat) => (
+      <div class="stat">
+        <span class="stat-val">{stat.value}</span>
+        <span class="stat-lbl">{stat.label}</span>
+      </div>
+    ))}
+  </div>
+  {cta.type === 'link' ? (
+    <a href={cta.href} class="card-cta" target="_blank" rel="noopener">{cta.label}</a>
+  ) : (
+    <span class="card-cta-soon">{cta.label}</span>
+  )}
+</div>
+
+<style>
+  .product-card {
+    background: var(--card);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .product-card:hover {
+    border-color: rgba(255, 92, 43, 0.25);
+    box-shadow: 0 0 0 1px rgba(255, 92, 43, 0.06), 0 12px 48px rgba(255, 92, 43, 0.07);
+    transform: translateY(-2px);
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text);
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.78;
+  }
+  .card-stats {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.08rem; }
+  .stat-val {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.025em;
+  }
+  .stat-lbl {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .card-tags { display: flex; gap: 0.45rem; flex-wrap: wrap; }
+  .tag {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.18rem 0.55rem;
+    color: var(--muted);
+  }
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    padding: 0.62rem 1.35rem;
+    border-radius: 9px;
+    width: fit-content;
+    margin-top: auto;
+    transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 20px rgba(255, 92, 43, 0.3);
+  }
+  .card-cta:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(255, 92, 43, 0.4);
+  }
+  .card-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .card-cta-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    color: var(--muted);
+    border: 1px dashed rgba(255, 255, 255, 0.14);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    padding: 0.62rem 1.35rem;
+    border-radius: 9px;
+    width: fit-content;
+    margin-top: auto;
+  }
+  .card-soon {
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.6rem;
+    min-height: 200px;
+  }
+  .soon-title { font-size: 0.88rem; font-weight: 700; color: var(--dim); }
+  .soon-sub { font-size: 0.78rem; color: var(--dim); line-height: 1.68; }
+  @media (prefers-reduced-motion: reduce) {
+    .card-cta, .product-card { transition: none; }
+  }
+</style>

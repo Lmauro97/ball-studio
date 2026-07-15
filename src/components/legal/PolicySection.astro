@@ -1,0 +1,46 @@
+---
+interface Props {
+  heading: string;
+}
+
+const { heading } = Astro.props;
+---
+
+<div class="policy-section">
+  <h3>{heading}</h3>
+  <slot />
+</div>
+
+<style>
+  .policy-section {
+    margin-bottom: 2.25rem;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2.5rem;
+  }
+  .policy-section h3 {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  .policy-section :global(p),
+  .policy-section :global(li) { font-size: 0.875rem; color: var(--muted); line-height: 1.88; }
+  .policy-section :global(ul) { padding-left: 1.25rem; margin-top: 0.5rem; }
+  .policy-section :global(li) { margin-bottom: 0.25rem; }
+  .policy-section :global(a) { color: var(--blue); text-decoration: none; }
+  .policy-section :global(a:hover) { text-decoration: underline; }
+  .policy-section :global(strong) { color: var(--text); }
+  .policy-section :global(code) {
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--blue);
+  }
+  @media (max-width: 640px) {
+    .policy-section { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>

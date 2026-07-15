@@ -1,0 +1,53 @@
+<canvas id="starCanvas"></canvas>
+
+<style>
+  #starCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>
+
+<script>
+  (function () {
+    const cv = document.getElementById('starCanvas') as HTMLCanvasElement,
+      cx = cv.getContext('2d')!;
+    let W: number, H: number, stars: { x: number; y: number; r: number; a: number; sp: number }[] = [];
+    function resize() {
+      W = cv.width = cv.offsetWidth;
+      H = cv.height = cv.offsetHeight;
+    }
+    function initStars() {
+      stars = Array.from({ length: 70 }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 0.9 + 0.15,
+        a: Math.random() * 0.32 + 0.08,
+        sp: Math.random() * 0.05 + 0.01,
+      }));
+    }
+    function draw() {
+      cx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        s.x -= s.sp;
+        if (s.x < 0) { s.x = W; s.y = Math.random() * H; }
+        cx.beginPath();
+        cx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        cx.fillStyle = `rgba(220,230,255,${s.a})`;
+        cx.fill();
+      }
+    }
+    const reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    window.addEventListener('resize', () => {
+      resize();
+      stars.forEach((s) => { s.x = Math.random() * W; s.y = Math.random() * H; });
+    });
+    resize();
+    initStars();
+    if (reduced) { draw(); } else {
+      (function loop() { draw(); requestAnimationFrame(loop); })();
+    }
+  })();
+</script>

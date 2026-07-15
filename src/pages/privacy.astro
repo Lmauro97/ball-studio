@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import RollingEscapePrivacy from '../components/legal/rolling-escape/Privacy.astro';
+import ArcaneSpheresPrivacy from '../components/legal/arcane-spheres/Privacy.astro';
+import HabitosPrivacy from '../components/legal/habitos/Privacy.astro';
+import TalkToMePrivacy from '../components/legal/talktome/Privacy.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="Privacy Policies — Ball Studios">
+  <Nav />
+  <main class="legal-page" id="privacy">
+    <div class="privacy-index">
+      <div class="category-header">
+        <span class="category-label">Privacy Policies</span>
+      </div>
+      <div class="privacy-index-grid">
+        <div class="privacy-index-item">
+          <span class="pii-app">Rolling Escape</span>
+          <span class="pii-type">Game · Android</span>
+          <a href="#privacy-rolling-escape" class="pii-link">Read policy ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">Rolling Escape</span>
+          <span class="pii-type">Terms & Conditions</span>
+          <a href={`${base}/terms#terms-rolling-escape`} class="pii-link">Read terms ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">Arcane Spheres</span>
+          <span class="pii-type">Game · Android</span>
+          <a href="#privacy-arcane-spheres" class="pii-link">Read policy ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">Arcane Spheres</span>
+          <span class="pii-type">Terms & Conditions</span>
+          <a href={`${base}/terms#terms-arcane-spheres`} class="pii-link">Read terms ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">Hábitos</span>
+          <span class="pii-type">App · Android</span>
+          <a href="#privacy-habitos" class="pii-link">Read policy ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">Hábitos</span>
+          <span class="pii-type">Terms & Conditions</span>
+          <a href={`${base}/terms#terms-habitos`} class="pii-link">Read terms ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">TalkToMe <span class="pii-soon">(in development)</span></span>
+          <span class="pii-type">App · Android</span>
+          <a href="#privacy-hablame" class="pii-link">Read policy ↓</a>
+        </div>
+        <div class="privacy-index-item">
+          <span class="pii-app">TalkToMe <span class="pii-soon">(in development)</span></span>
+          <span class="pii-type">Terms & Conditions</span>
+          <a href={`${base}/terms#terms-hablame`} class="pii-link">Read terms ↓</a>
+        </div>
+      </div>
+      <p class="privacy-index-note">
+        Additional policies will be published here as new products are released.
+      </p>
+    </div>
+
+    <RollingEscapePrivacy />
+    <ArcaneSpheresPrivacy />
+    <HabitosPrivacy />
+    <TalkToMePrivacy />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .privacy-index { margin-bottom: 4rem; }
+  .privacy-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .privacy-index-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.18s;
+  }
+  .privacy-index-item:hover { border-color: rgba(255, 92, 43, 0.2); }
+  .pii-app { font-size: 0.875rem; font-weight: 700; color: var(--text); }
+  .pii-soon { font-weight: 400; color: var(--muted); font-size: 0.72rem; }
+  .pii-type {
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .pii-link { font-size: 0.75rem; color: var(--blue); text-decoration: none; margin-top: auto; }
+  .pii-link:hover { text-decoration: underline; }
+  .privacy-index-note { font-size: 0.75rem; color: var(--muted); margin-top: 1.25rem; }
+</style>

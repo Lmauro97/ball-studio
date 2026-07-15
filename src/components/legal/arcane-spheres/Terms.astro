@@ -1,0 +1,126 @@
+---
+import PolicyBlock from '../PolicyBlock.astro';
+import PolicySection from '../PolicySection.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<PolicyBlock
+  id="terms-arcane-spheres"
+  title="Arcane Spheres"
+  badgeLabel="Terms & Conditions"
+  updated="July 5, 2026"
+>
+  <PolicySection heading="Agreement">
+    <p>
+      By downloading, installing, or playing <strong>Arcane Spheres</strong> you agree
+      to be bound by these Terms and Conditions. If you do not agree, do not use the App.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="License">
+    <p>
+      Ball Studios grants you a limited, personal, non-commercial, non-transferable,
+      revocable license to use the App on Android devices you own or control, solely
+      for your personal entertainment. You may not sublicense, sell, resell, or
+      commercially exploit the App or its content in any way.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Virtual currency & rewarded ads">
+    <p>
+      The App does not offer real-money purchases. Shards and Crystals are virtual
+      currencies earned entirely through gameplay — completing matches, runner levels,
+      daily login streaks, and similar in-game activities. Shards are spent to unlock
+      playable spheres and permanent upgrades. Crystals are spent on premium cosmetic
+      skins. Some rewards can optionally be doubled, or a run revived, by watching a
+      rewarded video ad via Google AdMob. Ball Studios reserves the right to modify
+      earn rates, prices, or available items at any time without prior notice.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Virtual items">
+    <p>
+      Shards, Crystals, unlocked spheres, and cosmetic skins earned in the App have no
+      monetary value outside the App. They cannot be transferred to other users,
+      exchanged for real money, or redeemed for goods or services. Virtual items may be
+      forfeited if the App is discontinued or your access is terminated.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Advertising">
+    <p>
+      The App displays advertisements via Google AdMob, including banner ads,
+      interstitial ads (between matches and on game over), and optional rewarded ads.
+      Users in the EEA and UK will be asked for consent before personalized ads are
+      shown, as required by GDPR and UK GDPR. See our
+      <a href={`${base}/privacy#privacy-arcane-spheres`}>Privacy Policy</a> for details on data collected
+      by AdMob.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Intellectual property">
+    <p>
+      All content within the App — including but not limited to graphics, code, sound,
+      music, sphere designs, level layouts, and the Ball Studios name and logo — is the
+      exclusive property of Ball Studios and is protected by applicable intellectual
+      property laws. You may not copy, modify, distribute, decompile, reverse-engineer,
+      or create derivative works from any part of the App without express written
+      permission from Ball Studios.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Prohibited conduct">
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use cheats, exploits, automation software, or any unauthorized third-party
+          tools to modify the App or gain an unfair advantage.</li>
+      <li>Attempt to access, tamper with, or disrupt the App's local data storage in
+          order to obtain virtual items without purchase.</li>
+      <li>Use the App for any unlawful purpose or in violation of these Terms.</li>
+    </ul>
+  </PolicySection>
+
+  <PolicySection heading="Disclaimers">
+    <p>
+      The App is provided <em>"as is"</em> without warranties of any kind, express or
+      implied, including merchantability, fitness for a particular purpose, or
+      non-infringement. Ball Studios does not warrant that the App will be error-free,
+      uninterrupted, or free of harmful components. Your use of the App is at your
+      sole risk.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Limitation of liability">
+    <p>
+      To the fullest extent permitted by law, Ball Studios shall not be liable for any
+      indirect, incidental, special, consequential, or punitive damages arising from
+      your use of or inability to use the App, even if advised of the possibility of
+      such damages. As the App is free-to-play with no real-money purchases, our total
+      liability shall not exceed US $1.00.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Changes to terms">
+    <p>
+      Ball Studios reserves the right to update these Terms at any time. Changes will
+      be posted on this page with a revised date. Continued use of the App after
+      changes are posted constitutes your acceptance of the updated Terms.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Governing law">
+    <p>
+      These Terms are governed by and construed in accordance with the laws of Colombia,
+      without regard to conflict-of-law provisions. Any disputes shall be subject to
+      the exclusive jurisdiction of the courts of Colombia.
+    </p>
+  </PolicySection>
+
+  <PolicySection heading="Contact">
+    <p>
+      Questions about these Terms:
+      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+    </p>
+  </PolicySection>
+</PolicyBlock>

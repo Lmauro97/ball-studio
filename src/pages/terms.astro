@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import RollingEscapeTerms from '../components/legal/rolling-escape/Terms.astro';
+import ArcaneSpheresTerms from '../components/legal/arcane-spheres/Terms.astro';
+import HabitosTerms from '../components/legal/habitos/Terms.astro';
+import TalkToMeTerms from '../components/legal/talktome/Terms.astro';
+---
+
+<BaseLayout title="Terms & Conditions — Ball Studios">
+  <Nav />
+  <main class="legal-page" id="terms">
+    <div class="category-header terms-header">
+      <span class="category-label">Terms &amp; Conditions</span>
+    </div>
+
+    <RollingEscapeTerms />
+    <ArcaneSpheresTerms />
+    <HabitosTerms />
+    <TalkToMeTerms />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .terms-header { margin-bottom: 3rem; }
+</style>

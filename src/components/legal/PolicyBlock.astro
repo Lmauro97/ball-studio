@@ -1,0 +1,38 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  subtitle?: string;
+  badgeLabel: string;
+  extraBadge?: string;
+  updated: string;
+}
+
+const { id, title, subtitle, badgeLabel, extraBadge, updated } = Astro.props;
+---
+
+<div class="policy-block" id={id}>
+  <div class="policy-meta">
+    <h2>{title} {subtitle && <span class="subtitle">{subtitle}</span>}</h2>
+    <span class="badge badge-type">{badgeLabel}</span>
+    {extraBadge && <span class="badge badge-soon">{extraBadge}</span>}
+    <span class="policy-updated">Last updated: {updated}</span>
+  </div>
+  <slot />
+</div>
+
+<style>
+  .policy-block { border-top: 1px solid var(--border); padding-top: 4rem; }
+  .policy-block + .policy-block { margin-top: 3rem; }
+  .policy-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .policy-meta h2 { font-size: 1.45rem; font-weight: 800; letter-spacing: -0.02em; }
+  .subtitle { font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+  .policy-meta :global(.badge) { align-self: center; }
+  .policy-updated { font-size: 0.72rem; color: var(--muted); margin-left: auto; }
+</style>

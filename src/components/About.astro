@@ -1,0 +1,67 @@
+<section id="about">
+  <div class="about-inner">
+    <span class="about-label">About</span>
+    <div class="about-body">
+      <p>
+        <strong>Ball Studios</strong> is a small independent studio building
+        across mobile: React Native and Unity games, productivity tools,
+        AI-powered apps, and study experiences. We ship things that are tight,
+        honest, and worth your time.
+      </p>
+      <p class="about-contact" style="margin-top:1rem">
+        Want to get in touch? Write to us at
+        <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #about {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #about::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative;
+  }
+  .about-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.2rem;
+  }
+  .about-body { font-size: 0.98rem; color: var(--muted); line-height: 1.88; }
+  .about-body strong { color: var(--text); font-weight: 600; }
+  .about-contact { margin-top: 1.25rem; font-size: 0.875rem; }
+  .about-contact a { color: var(--blue); text-decoration: none; }
+  .about-contact a:hover { text-decoration: underline; }
+  @media (max-width: 700px) {
+    .about-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+  @media (max-width: 640px) {
+    #about { padding: 3rem 1.25rem; }
+  }
+</style>

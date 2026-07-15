@@ -1,0 +1,245 @@
+---
+import StarField from './StarField.astro';
+---
+
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <StarField />
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1 class="hero-wordmark">Ball<em>Studios</em></h1>
+      <p class="hero-descriptor">
+        Independent mobile studio. We build games and apps that are tight,
+        honest, and worth your time.
+      </p>
+    </div>
+    <div class="focus-panel">
+      <span class="focus-label">What we build</span>
+      <div class="focus-list">
+        <div class="focus-item">
+          <span class="focus-bar game"></span>
+          <div>
+            <span class="focus-name">Mobile Games</span>
+            <span class="focus-sub">React Native</span>
+          </div>
+        </div>
+        <div class="focus-item">
+          <span class="focus-bar game"></span>
+          <div>
+            <span class="focus-name">Unity Games</span>
+            <span class="focus-sub">Cross-platform</span>
+          </div>
+        </div>
+        <div class="focus-item">
+          <span class="focus-bar app"></span>
+          <div>
+            <span class="focus-name">Productivity Apps</span>
+            <span class="focus-sub">Android</span>
+          </div>
+        </div>
+        <div class="focus-item">
+          <span class="focus-bar app"></span>
+          <div>
+            <span class="focus-name">AI Applications</span>
+            <span class="focus-sub">Mobile-first</span>
+          </div>
+        </div>
+        <div class="focus-item">
+          <span class="focus-bar app"></span>
+          <div>
+            <span class="focus-name">Study &amp; Learning</span>
+            <span class="focus-sub">Education tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 2.5rem 6rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 100%);
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(72px);
+    pointer-events: none;
+  }
+  .orb-1 {
+    width: 640px;
+    height: 640px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 65%);
+    top: -160px;
+    right: -80px;
+    animation: orbFloat 10s ease-in-out infinite;
+  }
+  .orb-2 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(255, 92, 43, 0.14) 0%, transparent 65%);
+    bottom: -60px;
+    left: -60px;
+    animation: orbFloat 13s ease-in-out infinite reverse;
+  }
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 65%);
+    top: 40%;
+    left: 40%;
+    animation: orbFloat 15s ease-in-out infinite 3s;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-24px) scale(1.04); }
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  .hero-left {
+    flex: 1;
+    min-width: 280px;
+  }
+  .hero-wordmark {
+    font-size: clamp(3.4rem, 9.5vw, 9rem);
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 2rem;
+  }
+  .hero-wordmark em {
+    font-style: normal;
+    background: linear-gradient(135deg, #ff5c2b 0%, #ff9a5c 60%, #ffb347 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+  }
+  .hero-descriptor {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    max-width: 420px;
+    line-height: 1.8;
+  }
+  .focus-panel {
+    width: clamp(240px, 30%, 300px);
+    background: rgba(4, 8, 24, 0.88);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem 0.75rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 0 48px rgba(99, 102, 241, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  .focus-label {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+  .focus-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .focus-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.72rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    opacity: 0;
+    animation: focusIn 0.4s ease forwards;
+  }
+  .focus-item:last-child { border-bottom: none; }
+  .focus-item:nth-child(1) { animation-delay: 0.2s; }
+  .focus-item:nth-child(2) { animation-delay: 0.33s; }
+  .focus-item:nth-child(3) { animation-delay: 0.46s; }
+  .focus-item:nth-child(4) { animation-delay: 0.59s; }
+  .focus-item:nth-child(5) { animation-delay: 0.72s; }
+  .focus-bar {
+    width: 3px;
+    height: 28px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .focus-bar.game {
+    background: linear-gradient(180deg, #ff5c2b, #ff9a5c);
+    box-shadow: 0 0 8px rgba(255, 92, 43, 0.4);
+  }
+  .focus-bar.app {
+    background: linear-gradient(180deg, #38bdf8, #6366f1);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.35);
+  }
+  .focus-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    line-height: 1.1;
+  }
+  .focus-sub {
+    font-size: 0.66rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 0.18rem;
+    display: block;
+  }
+  @keyframes focusIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .orb { animation: none; }
+    .focus-item { animation: none; opacity: 1; }
+  }
+  @media (max-width: 820px) {
+    .hero-inner { gap: 2.5rem; }
+    .focus-panel { width: 100%; }
+  }
+  @media (max-width: 640px) {
+    #hero { padding: 0 1.25rem 3.5rem; }
+    .hero-inner { gap: 1.75rem; }
+    .hero-wordmark { margin-bottom: 1.5rem; font-size: clamp(2.8rem, 14vw, 9rem); }
+    .hero-descriptor { font-size: 0.87rem; }
+    .orb-1 { width: 340px; height: 340px; top: -80px; right: -50px; }
+    .orb-2 { width: 240px; height: 240px; bottom: -20px; left: -30px; }
+    .orb-3 { width: 160px; height: 160px; }
+  }
+</style>
