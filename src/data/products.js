@@ -87,7 +87,7 @@ export const categories = [
         cta: { type: 'soon', label: 'Coming soon to Google Play' },
       },
       {
-        title: 'Hábitos',
+        title: 'Habits AI',
         badges: [
           { variant: 'type', label: 'Productivity' },
           { variant: 'live', label: '● Available' },
