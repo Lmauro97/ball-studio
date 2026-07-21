@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('devlog');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title={`${post.data.title} — Ball Studios Devlog`} description={post.data.summary}>
+  <Nav />
+  <main class="legal-page devlog-post">
+    <a href={`${base}/devlog`} class="back-link">← Devlog</a>
+    <span class="devlog-date">{formatDate(post.data.date)}</span>
+    <h1 class="devlog-post-title">{post.data.title}</h1>
+    <div class="devlog-tags">
+      {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <div class="prose">
+      <Content />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .devlog-post { max-width: 760px; }
+  .back-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+  }
+  .back-link:hover { color: var(--text); }
+  .devlog-date {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .devlog-post-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .devlog-tags {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    margin: 1.25rem 0 2.5rem;
+  }
+  .prose { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
+  .prose :global(h2) {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 2.25rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(p) { margin-bottom: 1.1rem; }
+  .prose :global(ul) { margin: 0 0 1.1rem 1.25rem; }
+  .prose :global(li) { margin-bottom: 0.5rem; }
+  .prose :global(a) { color: var(--blue); }
+  .prose :global(strong) { color: var(--text); font-weight: 600; }
+  @media (max-width: 640px) {
+    .devlog-post-title { font-size: 1.5rem; }
+  }
+</style>

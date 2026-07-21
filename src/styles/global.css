@@ -7,13 +7,14 @@
 }
 :root {
   --bg: #030712;
+  --bg-angle: 91deg;
   --surface: #060d1f;
   --card: #090f22;
   --accent: #ff5c2b;
   --indigo: #6366f1;
   --blue: #38bdf8;
   --text: #f1f5ff;
-  --muted: #64748b;
+  --muted: #ffffff;
   --dim: #2d3f5c;
   --border: rgba(255, 255, 255, 0.06);
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -22,12 +23,48 @@ html {
   color-scheme: dark;
   scroll-behavior: smooth;
 }
+
+@property --bg-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 91deg;
+}
+
 body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font);
-  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  background: linear-gradient(
+    var(--bg-angle),
+    #00021f,
+    #00021f,
+    #7bffda,
+    #00021f,
+    #00021f
+  );
+  animation: bg-angle-shift 8s ease-in-out infinite alternate;
+}
+
+body > main {
+  flex: 1 0 auto;
+}
+
+body > footer {
+  margin-top: auto;
+}
+
+@keyframes bg-angle-shift {
+  from {
+    --bg-angle: 60deg;
+  }
+  to {
+    --bg-angle: 120deg;
+  }
 }
 
 /* Shared primitives — reused across product cards and legal pages */
@@ -39,10 +76,22 @@ body {
   border-radius: 5px;
   padding: 0.18rem 0.52rem;
 }
-.badge-type { background: rgba(255, 92, 43, 0.1); color: var(--accent); }
-.badge-live { background: rgba(56, 189, 248, 0.1); color: var(--blue); }
-.badge-soon { background: rgba(100, 116, 139, 0.12); color: var(--muted); }
-.badge-platform { background: rgba(99, 102, 241, 0.1); color: #a5b4fc; }
+.badge-type {
+  background: rgb(0 0 0 / 57%);
+  color: var(--accent);
+}
+.badge-live {
+  background: rgb(72 248 56 / 69%);
+  color: #0c0000;
+}
+.badge-soon {
+  background: #ffff0080;
+  color: var(--muted);
+}
+.badge-platform {
+  background: rgb(255 255 255);
+  color: #000000;
+}
 
 .category-header {
   display: flex;
@@ -64,16 +113,30 @@ body {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--muted);
   margin-left: auto;
 }
 
 /* Shared legal-page container — used by /privacy and /terms */
 .legal-page {
-  padding: 5rem 2.5rem;
+  padding: 5rem 0rem;
   max-width: 1100px;
   margin: 0 auto;
 }
 @media (max-width: 640px) {
-  .legal-page { padding: 3.5rem 1.25rem; }
+  .legal-page {
+    padding: 3.5rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}
+.card {
+  background: #00000085;
+  border-radius: 10px;
+  padding: 0px 10px;
+  border: 1px solid #000000;
 }

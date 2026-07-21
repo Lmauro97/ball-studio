@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const posts = (await getCollection('devlog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout
+  title="Devlog — Ball Studios"
+  description="Development updates from Ball Studios — new features, design decisions, and progress on our games and apps."
+>
+  <Nav />
+  <main class="legal-page" id="devlog">
+    <div class="category-header">
+      <span class="category-label">Devlog</span>
+      <span class="category-count">{posts.length} {posts.length === 1 ? 'post' : 'posts'}</span>
+    </div>
+
+    {posts.length === 0 ? (
+      <p class="devlog-empty">Nothing posted yet — check back soon.</p>
+    ) : (
+      <div class="devlog-list">
+        {posts.map((post) => (
+          <a href={`${base}/devlog/${post.id}`} class="devlog-item">
+            <span class="devlog-date">{formatDate(post.data.date)}</span>
+            <span class="devlog-title">{post.data.title}</span>
+            <p class="devlog-summary">{post.data.summary}</p>
+            <div class="devlog-tags">
+              {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .devlog-empty { color: var(--muted); font-size: 0.9rem; }
+  .devlog-list { display: flex; flex-direction: column; gap: 1rem; }
+  .devlog-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    text-decoration: none;
+    transition: border-color 0.18s, transform 0.18s;
+  }
+  .devlog-item:hover {
+    border-color: rgba(255, 92, 43, 0.25);
+    transform: translateY(-2px);
+  }
+  .devlog-date {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .devlog-title { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+  .devlog-summary { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+  .devlog-tags { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 0.25rem; }
+  @media (max-width: 640px) {
+    .devlog-item { padding: 1.5rem 1.5rem; }
+  }
+</style>

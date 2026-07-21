@@ -12,17 +12,20 @@ import PolicySection from '../PolicySection.astro';
   <PolicySection heading="Overview">
     <p>
       Ball Studios ("we", "our") operates the mobile application
-      <strong>Rolling Escape</strong>. This document describes how data is
+      <strong translate="no" data-notranslate="true">Rolling Escape</strong>. This document describes how data is
       collected and used when you play the game.
     </p>
   </PolicySection>
 
   <PolicySection heading="Data we collect">
+  <div class="flex">
+    <p translate="no" data-notranslate="true">Rolling Escape</p> 
     <p>
-      Rolling Escape does not collect personal information through its own
-      systems. All game progress — score, coins, owned skins, checkpoint level
-      — is stored locally on your device and is never transmitted to our servers.
+        does not collect personal information through its own
+        systems. All game progress — score, coins, owned skins, checkpoint level
+        — is stored locally on your device and is never transmitted to our servers.
     </p>
+  </div>
   </PolicySection>
 
   <PolicySection heading="Advertising">
@@ -80,7 +83,15 @@ import PolicySection from '../PolicySection.astro';
     <p style="margin-top:0.75rem">
       All game data is stored locally. Use <em>Reset Progress</em> or uninstall the App
       to delete it. For AdMob-related rights, write to
-      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a> and we will assist within 30 days.
+      <a
+        class="about-cta"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScMVe3zWAij_TeCoYU03qG2ggQVVJMWYmuq8J1hfybdmcohpg/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Ball Studios questionnaire"
+      >
+        Contact
+      </a> and we will assist within 30 days.
     </p>
   </PolicySection>
 
@@ -95,7 +106,15 @@ import PolicySection from '../PolicySection.astro';
   <PolicySection heading="Contact">
     <p>
       Questions about this policy:
-      <a href="mailto:lsalazarbedon@gmail.com">lsalazarbedon@gmail.com</a>
+      <a
+        class="about-cta"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScMVe3zWAij_TeCoYU03qG2ggQVVJMWYmuq8J1hfybdmcohpg/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Ball Studios questionnaire"
+      >
+        Contact
+      </a>
     </p>
   </PolicySection>
 </PolicyBlock>

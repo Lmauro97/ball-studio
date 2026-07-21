@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import StarField from './StarField.astro';
+import logo from '../assets/logo.webp';
 ---
 
 <section id="hero">
@@ -12,11 +14,14 @@ import StarField from './StarField.astro';
   <StarField />
   <div class="hero-inner">
     <div class="hero-left">
-      <h1 class="hero-wordmark">Ball<em>Studios</em></h1>
+      <Image src={logo} alt="Ball Studios" class="hero-logo" height={96} loading="eager" />
+      <h1 class="hero-wordmark" translate="no" data-notranslate="true">Ball<em>Studios</em></h1>
+      <div class="card">
       <p class="hero-descriptor">
         Independent mobile studio. We build games and apps that are tight,
         honest, and worth your time.
       </p>
+      </div>
     </div>
     <div class="focus-panel">
       <span class="focus-label">What we build</span>
@@ -64,7 +69,7 @@ import StarField from './StarField.astro';
 <style>
   #hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: flex-end;
     padding: 0 2.5rem 6rem;
@@ -131,6 +136,13 @@ import StarField from './StarField.astro';
     flex: 1;
     min-width: 280px;
   }
+  .hero-logo {
+    width: auto;
+    height: 96px;
+    display: block;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 24px rgba(255, 92, 43, 0.25));
+  }
   .hero-wordmark {
     font-size: clamp(3.4rem, 9.5vw, 9rem);
     font-weight: 900;
@@ -152,7 +164,6 @@ import StarField from './StarField.astro';
     font-size: clamp(0.9rem, 1.5vw, 1.05rem);
     color: var(--muted);
     letter-spacing: 0.01em;
-    max-width: 420px;
     line-height: 1.8;
   }
   .focus-panel {
@@ -236,6 +247,7 @@ import StarField from './StarField.astro';
   @media (max-width: 640px) {
     #hero { padding: 0 1.25rem 3.5rem; }
     .hero-inner { gap: 1.75rem; }
+    .hero-logo { height: 64px; margin-bottom: 1.1rem; }
     .hero-wordmark { margin-bottom: 1.5rem; font-size: clamp(2.8rem, 14vw, 9rem); }
     .hero-descriptor { font-size: 0.87rem; }
     .orb-1 { width: 340px; height: 340px; top: -80px; right: -50px; }
